@@ -3,7 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class Item
 {
-    public string itemName;
-    public int itemID;
-    public Sprite itemIcon;
+    public string Name;
+    public int ID;
+    public Sprite Icon;
+
 }
