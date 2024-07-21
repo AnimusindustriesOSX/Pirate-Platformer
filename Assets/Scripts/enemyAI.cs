@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class enemyAI : MonoBehaviour
 {
     public float distanceFromPlayer;
+    public float attackCooldown = 2;
     public float speed = 2;
     public float aggroCombatRange = 3;
     public float aggroRange = 10;
@@ -35,15 +37,29 @@ public class enemyAI : MonoBehaviour
             aggro = false;
         }
 
+      
         if( aggro && distanceFromPlayer<=aggroCombatRange){
-            //enemy attack
-        }
-        if(aggro){
             direction = (targetTransform.position - transform.position).normalized;
-            transform.position += speed * Time.deltaTime * direction;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Convert direction to angle in degrees
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+            float speedup = 4; 
+            transform.position += speed * speedup * Time.fixedDeltaTime * transform.up;
+        }else if(aggro){
+            direction = (targetTransform.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Convert direction to angle in degrees
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Subtract 90 degrees to align the enemy's local Y-axis with the direction
+            transform.position += speed * Time.fixedDeltaTime * transform.up;
         }else{
             direction = Vector3.zero;
         }
     }
 
+    IEnumerator attack(float duration) {
+    var time_start = Time.time;
+    var time_end = time_start + duration;
+    while(Time.time < time_end) {
+        var t = (Time.time - time_start) / duration;
+        transform.position += Vector3.Lerp(transform.position, transform.position+direction, t);
+        yield return null;
+    }}
 }

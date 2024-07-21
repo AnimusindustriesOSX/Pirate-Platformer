@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Item
   - Shadow
+  - MainWeapon
+  - Shadow-attack
   layers:
   - Default
   - TransparentFX

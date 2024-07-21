@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class layerControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     private void Start() {
@@ -12,6 +12,6 @@ public class layerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spriteRenderer.sortingOrder = (int)((transform.position.y*100)/100);
+        spriteRenderer.sortingOrder = (int)(transform.position.y*100);
     }
 }

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpriteBillboard : MonoBehaviour
 {
     [SerializeField] bool freezeXZAxis = true;
+ 
 
     // Update is called once per frame
     void Update()
