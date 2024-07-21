@@ -7,6 +7,7 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     public const int MaxHP = 100;
+    public int strength = 10;
     public int HP;
     public int insanity;
     public float pickupDistance = 3;
@@ -57,6 +58,7 @@ public class playerController : MonoBehaviour
         
         if(Input.GetMouseButton(0)){
             //attack
+            
             autoCooldown = true;
         }
         if(autoCooldown){
@@ -81,9 +83,9 @@ public class playerController : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Shadow-attack")){
+        if(other.gameObject.CompareTag("Shadow")){
             Debug.Log("shadow collided");
-            insanity += 10 ;
+            insanity += 1 ;
         }
     }
     
@@ -91,12 +93,11 @@ public class playerController : MonoBehaviour
     {   
         
         Debug.Log(collision.gameObject.tag);
-        HP -= 10;
-        // Set the velocity to zero when a collision occurs
         rb.velocity = Vector2.zero;
+        HP -= 10;
         if(collision.gameObject.CompareTag("Physical-attack")){
-            HP -= 10 ;
-        }else if(collision.gameObject.CompareTag("Shadow-attack")){
+            HP -= collision.gameObject.GetComponent<Enemy>().collisionDamage ;
+        }else if(collision.gameObject.CompareTag("Shadow")){ 
             Debug.Log("shadow");
             insanity += 10 ;
             HP -= 10 ;

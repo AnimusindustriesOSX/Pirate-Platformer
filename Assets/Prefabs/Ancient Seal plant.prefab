@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4078530375604345560
+--- !u!1 &1526173082672755308
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3254197798002180251}
-  - component: {fileID: 1506158299672143328}
-  - component: {fileID: 4568366541929534917}
-  - component: {fileID: 4949221614787661382}
+  - component: {fileID: 3278836518423570802}
+  - component: {fileID: 6957730639018243784}
+  - component: {fileID: 2738285625118595407}
+  - component: {fileID: 883117686055747437}
   m_Layer: 0
-  m_Name: shadowBerryBush
+  m_Name: Spiroshade sapling
   m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3254197798002180251
+--- !u!4 &3278836518423570802
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4078530375604345560}
+  m_GameObject: {fileID: 1526173082672755308}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4380115049234709550}
+  m_Father: {fileID: 5534022548163414841}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!212 &1506158299672143328
+--- !u!212 &6957730639018243784
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4078530375604345560}
+  m_GameObject: {fileID: 1526173082672755308}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -44866225, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  m_Sprite: {fileID: 2039805940, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,37 +86,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4568366541929534917
+--- !u!114 &2738285625118595407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4078530375604345560}
+  m_GameObject: {fileID: 1526173082672755308}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f54582d127073114b9597f21ead64cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    Name: shadowBerry
-    ID: 11
+    Name: Spiroshade tomato
+    ID: 13
     isShadow: 1
     Icon: {fileID: -44866225, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
---- !u!114 &4949221614787661382
+--- !u!114 &883117686055747437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4078530375604345560}
+  m_GameObject: {fileID: 1526173082672755308}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d628a43f8997c2440a035c2a7d7b2392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   freezeXZAxis: 1
---- !u!1 &8250150515489576459
+--- !u!1 &3574001144090927992
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,41 +124,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4380115049234709550}
-  - component: {fileID: 3559032292360622698}
-  - component: {fileID: 2028931514675393169}
-  - component: {fileID: 6110766169003727263}
-  - component: {fileID: -3083452596688560456}
+  - component: {fileID: 5534022548163414841}
+  - component: {fileID: 1770831497493531476}
+  - component: {fileID: 8587196165271475509}
+  - component: {fileID: 6126421282206022701}
+  - component: {fileID: 5116397071132773935}
+  - component: {fileID: 4364380771018203035}
+  - component: {fileID: 6781080313811523524}
   m_Layer: 0
-  m_Name: pickable
+  m_Name: Ancient Seal plant
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4380115049234709550
+--- !u!4 &5534022548163414841
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250150515489576459}
+  m_GameObject: {fileID: 3574001144090927992}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 21.22, y: 1, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3254197798002180251}
+  - {fileID: 3278836518423570802}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3559032292360622698
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!212 &1770831497493531476
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250150515489576459}
+  m_GameObject: {fileID: 3574001144090927992}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -193,7 +195,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1572564603, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  m_Sprite: {fileID: 2070454442, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,43 +206,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2028931514675393169
+--- !u!114 &8587196165271475509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250150515489576459}
+  m_GameObject: {fileID: 3574001144090927992}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d628a43f8997c2440a035c2a7d7b2392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   freezeXZAxis: 0
---- !u!114 &6110766169003727263
+--- !u!114 &6126421282206022701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250150515489576459}
+  m_GameObject: {fileID: 3574001144090927992}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f54582d127073114b9597f21ead64cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    Name: berry
-    ID: 1
+    Name: Lucid beat
+    ID: 4
     isShadow: 0
     Icon: {fileID: 1572564603, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
---- !u!65 &-3083452596688560456
-BoxCollider:
+--- !u!114 &5116397071132773935
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250150515489576459}
+  m_GameObject: {fileID: 3574001144090927992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d68812b5319c49b09ad172b175f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+--- !u!61 &4364380771018203035
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574001144090927992}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -249,9 +266,58 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.02304, y: 1.9185143, z: 0.769969}
-  m_Center: {x: -0.0125848055, y: 0.96995544, z: 0.32744884}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.08, y: 2.51}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &6781080313811523524
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574001144090927992}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

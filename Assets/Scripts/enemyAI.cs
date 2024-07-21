@@ -8,7 +8,6 @@ using UnityEngine;
 public class enemyAI : MonoBehaviour
 {
     public float distanceFromPlayer;
-    public float attackCooldown = 2;
     public float speed = 2;
     public float aggroCombatRange = 3;
     public float aggroRange = 10;
@@ -37,7 +36,6 @@ public class enemyAI : MonoBehaviour
             aggro = false;
         }
 
-      
         if( aggro && distanceFromPlayer<=aggroCombatRange){
             direction = (targetTransform.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Convert direction to angle in degrees
@@ -53,13 +51,4 @@ public class enemyAI : MonoBehaviour
             direction = Vector3.zero;
         }
     }
-
-    IEnumerator attack(float duration) {
-    var time_start = Time.time;
-    var time_end = time_start + duration;
-    while(Time.time < time_end) {
-        var t = (Time.time - time_start) / duration;
-        transform.position += Vector3.Lerp(transform.position, transform.position+direction, t);
-        yield return null;
-    }}
 }

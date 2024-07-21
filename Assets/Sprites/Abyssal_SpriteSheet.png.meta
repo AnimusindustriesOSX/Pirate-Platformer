@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 3823
+        y: 2137
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ac8d5d8c2304a4c9b1f375d53bdd97
+      internalID: -1043815004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1516
+        width: 184
+        height: 598
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab44f39b3a5247046be84321942bff26
+      internalID: -1286062490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1812
+        width: 193
+        height: 296
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6d0bcea56e63644a9031bdf8f6a664
+      internalID: -597610844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1492
+        width: 207
+        height: 622
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd57b7a8404fe8459b7686d891fa53b
+      internalID: 561364858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1886
+        width: 76
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc826f703650d74d9e0f62d5d06d554
+      internalID: -1034915983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1583
+        width: 228
+        height: 184
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3b0c98d303f4949a33dcc04b189dfe
+      internalID: -1363986226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1760
+        width: 96
+        height: 110
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7813b3f96522cdd4e98baedd9f46cd54
+      internalID: 855689010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 1694
+        width: 82
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc85ba86df03a94980c5803ad7f67c1
+      internalID: -791594917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 1612
+        width: 73
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ae978fff461234da7670143b3914d9
+      internalID: 2001454214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1486
+        width: 163
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326d094ed22dd994291341cc78e932de
+      internalID: -642579017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1328
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058261009074a0147ae37d2e5e5f5f35
+      internalID: 1656806175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abyssal_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 3822
+        y: 0
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623595c9a751059468e1601d12b227b1
+      internalID: -417163973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +371,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Abyssal_SpriteSheet_0: -1943673032
+      Abyssal_SpriteSheet_1: -1056318288
+      Abyssal_SpriteSheet_10: 2001454214
+      Abyssal_SpriteSheet_11: 598991535
+      Abyssal_SpriteSheet_12: -642579017
+      Abyssal_SpriteSheet_13: 1656806175
+      Abyssal_SpriteSheet_14: -417163973
+      Abyssal_SpriteSheet_2: -1043815004
+      Abyssal_SpriteSheet_3: -1286062490
+      Abyssal_SpriteSheet_4: -597610844
+      Abyssal_SpriteSheet_5: 561364858
+      Abyssal_SpriteSheet_6: -1034915983
+      Abyssal_SpriteSheet_7: -1363986226
+      Abyssal_SpriteSheet_8: 855689010
+      Abyssal_SpriteSheet_9: -791594917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

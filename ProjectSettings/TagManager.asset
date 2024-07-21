@@ -8,6 +8,9 @@ TagManager:
   - Shadow
   - MainWeapon
   - Shadow-attack
+  - Physical
+  - Player-shadow-attack
+  - Physical-attack
   layers:
   - Default
   - TransparentFX

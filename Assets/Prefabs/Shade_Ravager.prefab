@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 66745968703060446}
   - component: {fileID: 3983317008498716922}
   - component: {fileID: 2223224587294069303}
+  - component: {fileID: 6610810532488984559}
   m_Layer: 0
   m_Name: Shade_Ravager
-  m_TagString: Shadow-attack
+  m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,8 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromPlayer: 0
-  attackCooldown: 1
-  speed: 3
+  speed: 2.5
   aggroCombatRange: 8
   aggroRange: 20
   aggroMaxRange: 40
@@ -135,7 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb00a39fe5725f4c812177b6d3fe171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
+  currentHealth: 0
+  collisionDamage: 0
 --- !u!61 &66745968703060446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -229,3 +231,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &6610810532488984559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605760328336200024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6758a01df2381894e8bc850349d56351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,16 +6,18 @@ public class Sword : MonoBehaviour
 {
     public int damage = 10;
     public const float cooldown = 1;  
-    void OnTriggerEnter2D(Collider2D other)
+   /*  void OnTriggerEnter2D(Collider2D other)
     {
-        /* if (other.CompareTag("Physical"))
+        if (other.CompareTag("Physical"))
         {
             // Deal damage to the enemy
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
+
+            
+            if (other.GetComponent<Enemy>() != null)
             {
-                enemy.TakeDamage(damage);
+                other.GetComponent<Enemy>().TakeDamage(damage);
+                Debug.Log("Physical Collided with sword");
             }
-        } */
-    }
+        }
+    } */
 }
