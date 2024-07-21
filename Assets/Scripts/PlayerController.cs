@@ -38,7 +38,7 @@ public class playerController : MonoBehaviour
                 if (inventory != null && inventory.AddItem(closestItem.GetComponent<ItemPickup>().item))
                 {
                     Debug.Log("item");
-                    Destroy(closestItem);
+                    closestItem.GetComponent<Regrow>().Harvest();
                 }
             } 
         }
@@ -51,7 +51,7 @@ public class playerController : MonoBehaviour
                 Item shadowItem = shadow.GetComponent<ItemPickup>().item;
                 if (inventory != null && inventory.AddItem(shadowItem)){
                     Debug.Log("Shadow item");
-                    Destroy(closestItem);
+                    closestItem.GetComponent<Regrow>().Harvest();
                 }
             } 
         }

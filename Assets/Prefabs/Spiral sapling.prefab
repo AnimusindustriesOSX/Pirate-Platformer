@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7326805542123845886}
   - component: {fileID: 8434892270610203126}
   - component: {fileID: 1262612305939827125}
+  - component: {fileID: 5298001670111638439}
   m_Layer: 0
   m_Name: Spiral sapling
   m_TagString: Item
@@ -205,6 +206,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5298001670111638439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3514060081367004756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b04e661de88d8489d6cc2d946884eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  spriteRendererShadow: {fileID: 0}
+  sprites:
+  - {fileID: 1782661256, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: -1856390375, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 1317512120, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  shadowSprites:
+  - {fileID: 1782661256, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 712869671, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 1318472663, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
 --- !u!1 &7140444095078657783
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +305,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1318472663, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.89, y: 2.31}

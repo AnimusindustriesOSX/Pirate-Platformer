@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -1143173478, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.89, y: 2.31}
@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 1274813628781201879}
   - component: {fileID: 4465218318494142160}
   - component: {fileID: 4584733432762077910}
+  - component: {fileID: 8057039125071398382}
   m_Layer: 0
   m_Name: Bean mushroom
   m_TagString: Item
@@ -321,3 +322,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8057039125071398382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721154906473972529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b04e661de88d8489d6cc2d946884eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  spriteRendererShadow: {fileID: 0}
+  sprites:
+  - {fileID: -1989279151, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 1401570243, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 313405293, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  shadowSprites:
+  - {fileID: 1470654456, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 1630141012, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: -1143173478, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}

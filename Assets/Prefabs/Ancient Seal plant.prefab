@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5534022548163414841}
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    Name: Spiroshade tomato
-    ID: 13
-    isShadow: 1
+    Name: Lucid beat
+    ID: 4
+    isShadow: 0
     Icon: {fileID: -44866225, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
 --- !u!114 &883117686055747437
 MonoBehaviour:
@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 5116397071132773935}
   - component: {fileID: 4364380771018203035}
   - component: {fileID: 6781080313811523524}
+  - component: {fileID: 2246387163116606057}
   m_Layer: 0
   m_Name: Ancient Seal plant
   m_TagString: Item
@@ -321,3 +322,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2246387163116606057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574001144090927992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b04e661de88d8489d6cc2d946884eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  spriteRendererShadow: {fileID: 0}
+  sprites:
+  - {fileID: 1764487407, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 449245728, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 2070454442, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  shadowSprites:
+  - {fileID: 67270209, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 157770611, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  - {fileID: 2039805940, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
