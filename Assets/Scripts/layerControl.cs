@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+public class layerControl : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     private void Start() {
