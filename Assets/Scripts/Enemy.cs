@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,11 +7,15 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int collisionDamage= 1;
-
+    Animator animator;
+    enemyAI enemyAI;
+    BoxCollider2D boxCollider2D;
     void Start()
     {
         currentHealth = maxHealth;
-        
+        animator = GetComponent<Animator>();
+        enemyAI = GetComponent<enemyAI>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     public void TakeDamage(int damage)
@@ -23,9 +28,13 @@ public class Enemy : MonoBehaviour
         }
     }
     void Die()
-    {
-        // Handle enemy death
-        Destroy(gameObject);
+    {   
+        animator.SetBool("Dead",true);
+        enemyAI.enabled = false;
+        boxCollider2D.enabled = false;
+        StartCoroutine(Wait(0.5f));
+        Debug.Log("Dead");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -40,5 +49,11 @@ public class Enemy : MonoBehaviour
                 //currentHealth -= other.gameObject.GetComponent<ShadowAttack>().damage;
             }
         }
+    }
+
+    private IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
     }
 }
