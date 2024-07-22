@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_0
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 888
+        width: 82
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9601be41285f56b418732f229d43eda9
+      internalID: 1946859195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_1
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 928
+        width: 81
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f187b4fc990bef49b09f4c9280284e2
+      internalID: 865401390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_2
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 993
+        width: 77
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5aa29f18892d6479c3c4ae2a8c35b7
+      internalID: -524845334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_3
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 811
+        width: 390
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34203c0e40802cf4aa9dbf63a91c08fb
+      internalID: -1442747949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_4
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 569
+        width: 160
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b28b8ebd5b8c684aa3470d6e7ad2508
+      internalID: 1053381303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_5
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 577
+        width: 115
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1955bdb9c432a79488807ba75e1bb603
+      internalID: 299002932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_6
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 609
+        width: 101
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab443863a57ae54381881574fae4d28
+      internalID: 715893950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_7
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 473
+        width: 167
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f9080f1f8ed8b49b8f1167387ad78e
+      internalID: 865109677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_8
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 111
+        width: 434
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d8d7a6cc7b9024bbfe5e7d6a5a0026
+      internalID: -1026078498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_9
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 97
+        width: 159
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f414416674c524945adbbf3fdb5cde72
+      internalID: 1387188512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchanted_Sword_Slash_10
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 74
+        width: 122
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7258e9c357746ba4685c3a900083615f
+      internalID: 1663966320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +350,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Enchanted_Sword_Slash_0: 1946859195
+      Enchanted_Sword_Slash_1: 865401390
+      Enchanted_Sword_Slash_10: 1663966320
+      Enchanted_Sword_Slash_2: -524845334
+      Enchanted_Sword_Slash_3: -1442747949
+      Enchanted_Sword_Slash_4: 1053381303
+      Enchanted_Sword_Slash_5: 299002932
+      Enchanted_Sword_Slash_6: 715893950
+      Enchanted_Sword_Slash_7: 865109677
+      Enchanted_Sword_Slash_8: -1026078498
+      Enchanted_Sword_Slash_9: 1387188512
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

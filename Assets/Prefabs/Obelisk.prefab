@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8401917379975966043}
   - component: {fileID: 8954199539210609899}
   - component: {fileID: 2766907044199393774}
-  - component: {fileID: 7605988240297979367}
   - component: {fileID: 722903968303781218}
   m_Layer: 0
   m_Name: Obelisk
@@ -129,23 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3fcac2ea9a4874689ec549e66d9940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  structure: {fileID: 0}
-  obeliskShadow: {fileID: 0}
---- !u!114 &7605988240297979367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2821469462956258110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb00a39fe5725f4c812177b6d3fe171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
-  collisionDamage: 0
+  obeliskShadow: {fileID: 0}
 --- !u!61 &722903968303781218
 BoxCollider2D:
   m_ObjectHideFlags: 0

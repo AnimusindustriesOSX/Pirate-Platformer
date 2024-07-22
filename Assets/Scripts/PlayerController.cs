@@ -16,11 +16,16 @@ public class playerController : MonoBehaviour
     public GameObject closestItem;
     private Inventory inventory;
     private Rigidbody2D rb;
+    private Animator LegAnimator;
+    private Animator TorsoAnimator;
     bool autoCooldown = false;
     GameObject mainWeapon;
     // Start is called before the first frame update
     void Start()
     {
+        TorsoAnimator = GameObject.Find("body").GetComponent<Animator>();
+        LegAnimator = GameObject.Find("legs").GetComponent<Animator>();
+        
         inventory = GetComponent<Inventory>();
         rb = GetComponent<Rigidbody2D>();
         mainWeapon = GameObject.Find("MainWeapon");
@@ -72,6 +77,8 @@ public class playerController : MonoBehaviour
         //MOVEMENT
         Vector2 input =  new Vector2(Input.GetAxisRaw("Horizontal"), -Input.GetAxisRaw("Vertical"));
         if(input != Vector2.zero){
+            TorsoAnimator.SetBool("Walking", true);
+            LegAnimator.SetBool("Walking", true);
             direction = input.normalized;
             rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * direction);
             if(direction.x < 0) {
@@ -80,6 +87,9 @@ public class playerController : MonoBehaviour
             else if(direction.x > 0){
                 transform.localScale = new Vector3(-1,1,1);
             } 
+        }else{
+            TorsoAnimator.SetBool("Walking", false);
+            LegAnimator.SetBool("Walking", false);
         }
     }
     void OnTriggerEnter2D(Collider2D other){
