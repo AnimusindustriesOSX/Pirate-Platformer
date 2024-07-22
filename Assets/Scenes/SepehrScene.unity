@@ -148,11 +148,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 159709638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785c85145d29b0a40b9dae16364548e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c295f43469f31d4f89666b5c9f09c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cursor: {fileID: 162021784}
   shadow_Gun: {fileID: 1627537657}
+  offset: {x: 0, y: 0.7, z: 0}
 --- !u!4 &159709640
 Transform:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 159709638}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: -2.54, z: 0}
+  m_LocalPosition: {x: 0, y: -1.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -243,7 +244,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: de1e710d7be0e0a4faa2067c6b5f4cc2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7da78ee450b84d844a84e4c8e9f8e488, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.3882353}
   m_FlipX: 0
   m_FlipY: 0
@@ -349,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 599129096}
   - component: {fileID: 599129097}
+  - component: {fileID: 599129098}
   m_Layer: 0
   m_Name: Large_Player_Shadow_Disc
   m_TagString: Untagged
@@ -412,7 +414,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54ac94a40b556254690896880e28c504, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d52c9e337eca2347b27893e3df3c7ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8}
   m_FlipX: 0
   m_FlipY: 0
@@ -423,6 +425,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &599129098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599129095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d68812b5319c49b09ad172b175f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
 --- !u!1 &618954055
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +567,7 @@ Animator:
   m_GameObject: {fileID: 659347057}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ef03c02441819a439b66f6192828779, type: 2}
+  m_Controller: {fileID: 9100000, guid: 203e6ba1cefa6534f8e0dcb04f2b2e69, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -720,7 +735,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3bb49e603697f3449e34558ee81844c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6aaba1930619f81419e529a8027d3c0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8}
   m_FlipX: 0
   m_FlipY: 0
@@ -741,6 +756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120779398}
   - component: {fileID: 1120779399}
+  - component: {fileID: 1120779400}
   m_Layer: 0
   m_Name: Small_Player_Shadow_Disc
   m_TagString: Untagged
@@ -804,7 +820,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b51ff7da6637e64ab5832db55dd0fbc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 827cddf887856b645bcbab55e2e17c06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8}
   m_FlipX: 0
   m_FlipY: 0
@@ -815,6 +831,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1120779400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120779397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d68812b5319c49b09ad172b175f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1627537656
 GameObject:
   m_ObjectHideFlags: 0

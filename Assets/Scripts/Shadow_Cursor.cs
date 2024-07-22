@@ -9,7 +9,7 @@ public class Shadow_Cursor : MonoBehaviour
     [SerializeField] Transform Cursor;
     [SerializeField] Transform shadow_Gun;
     private GameObject player;
-    
+    public Vector3 offset;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -18,7 +18,7 @@ public class Shadow_Cursor : MonoBehaviour
     // Update is called once per frame
     void Update(){
         //follow player
-        if(player != null) transform.position = player.transform.position;
+        if(player != null) transform.position = player.transform.position + offset;
 
         //gun look at shadow cursor
         
