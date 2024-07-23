@@ -43,6 +43,7 @@ public class playerController : MonoBehaviour
                 if (inventory != null && inventory.AddItem(closestItem.GetComponent<ItemPickup>().item))
                 {
                     Debug.Log("item");
+                    transform.GetComponent<Audio>().playSound();
                     closestItem.GetComponent<Regrow>().Harvest();
                 }
             } 
