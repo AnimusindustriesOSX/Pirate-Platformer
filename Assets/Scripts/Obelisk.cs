@@ -14,7 +14,7 @@ public class Obelisk : MonoBehaviour
     {
         spawning = GetComponent<Spawning>();
         currentHealth = maxHealth;
-        obeliskShadow = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        obeliskShadow = transform.GetChild(0).GetChild(1).GetComponent<SpriteRenderer>();
     }
     // Update is called once per frame
     void Update()
