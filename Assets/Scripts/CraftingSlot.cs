@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class CraftingSlot : MonoBehaviour
 {
-    public CraftingItem item;
-    public int index;
+    public CraftingItem item; // The item currently in this slot
+    public int index;         // Index of the slot in the crafting manager
 }
