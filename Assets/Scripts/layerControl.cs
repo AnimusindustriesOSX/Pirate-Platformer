@@ -12,6 +12,6 @@ public class layerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spriteRenderer.sortingOrder = (int)(transform.position.y*100);
+        spriteRenderer.sortingOrder = (int)(transform.position.y*100) *10;
     }
 }
