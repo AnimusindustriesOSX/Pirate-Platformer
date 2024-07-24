@@ -4,12 +4,12 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public const int MaxHP = 100;
     public int strength = 10;
     public int HP;
-    public int insanity;
+    public float insanity = 0f;
     public float pickupDistance = 3;
     private Vector2 direction;
     [SerializeField] private float speed;
@@ -25,12 +25,10 @@ public class playerController : MonoBehaviour
     {
         TorsoAnimator = GameObject.Find("body").GetComponent<Animator>();
         LegAnimator = GameObject.Find("legs").GetComponent<Animator>();
-        
         inventory = GetComponent<Inventory>();
         rb = GetComponent<Rigidbody2D>();
         mainWeapon = GameObject.Find("MainWeapon");
         HP = MaxHP;
-        insanity = 0;
     }
 
     // Update is called once per frame
@@ -61,7 +59,9 @@ public class playerController : MonoBehaviour
                 }
             } 
         }
-        
+    
+
+
         if(Input.GetMouseButton(0)){
             //attack
             
@@ -93,25 +93,23 @@ public class playerController : MonoBehaviour
             LegAnimator.SetBool("Walking", false);
         }
     }
+    
+    
+    
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Shadow")){
-            Debug.Log("shadow collided");
-            insanity += 1 ;
+            InsanityChangeSigned(1);
         }
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {   
-        
-        Debug.Log(collision.gameObject.tag);
         rb.velocity = Vector2.zero;
         HP -= 10;
         if(collision.gameObject.CompareTag("Physical-attack")){
             HP -= collision.gameObject.GetComponent<Enemy>().collisionDamage ;
         }else if(collision.gameObject.CompareTag("Shadow")){ 
-            Debug.Log("shadow");
-            insanity += 10 ;
-            HP -= 10 ;
+            InsanityChangeSigned(2);
         }
     }
 
@@ -148,5 +146,10 @@ public class playerController : MonoBehaviour
         return closestItem;
     }
 
-    
+    public void InsanityChangeSigned(int insanity){
+        this.insanity += insanity;
+        if(insanity > 100) insanity=100;
+        if(insanity < 0) insanity=0;
+        //Debug.Log("insanity +=" + insanity);
+    }
 }

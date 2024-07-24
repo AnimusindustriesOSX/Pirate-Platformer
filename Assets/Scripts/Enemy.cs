@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,16 +7,21 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public int collisionDamage= 1;
+    public int collisionDamage;
+    
+    
+
     Animator animator;
     enemyAI enemyAI;
     BoxCollider2D boxCollider2D;
     void Start()
     {
+        
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         enemyAI = GetComponent<enemyAI>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        
     }
 
     public void TakeDamage(int damage)
@@ -33,8 +39,6 @@ public class Enemy : MonoBehaviour
         enemyAI.enabled = false;
         boxCollider2D.enabled = false;
         StartCoroutine(Wait(0.5f));
-        Debug.Log("Dead");
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

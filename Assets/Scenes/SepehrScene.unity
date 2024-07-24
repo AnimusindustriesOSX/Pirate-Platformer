@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 249770892}
   - component: {fileID: 249770894}
   - component: {fileID: 249770893}
+  - component: {fileID: 249770895}
   m_Layer: 5
   m_Name: Insanity_Bar_Fill
   m_TagString: Untagged
@@ -411,7 +412,7 @@ RectTransform:
   m_Father: {fileID: 1304121142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 293, y: 97}
   m_SizeDelta: {x: 295, y: 502}
   m_Pivot: {x: 0, y: 0}
@@ -440,7 +441,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -453,6 +454,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249770891}
   m_CullTransparentMesh: 1
+--- !u!114 &249770895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249770891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad463684569fa16468132828714e75fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insanityUI: {fileID: 249770893}
 --- !u!1 &254882080
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1000,7 @@ MonoBehaviour:
   health: 100
   insanity: 0
   maxHealth: 100
-  maxInsanity: 100
+  maxInsanity: 99
   insanitySlider: {fileID: 1304121141}
   healthSlider: {fileID: 254882080}
   insanityEye: {fileID: 1002943589}
@@ -1217,7 +1231,7 @@ Animator:
   m_GameObject: {fileID: 659347057}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 203e6ba1cefa6534f8e0dcb04f2b2e69, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9ef03c02441819a439b66f6192828779, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1826,7 +1840,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304121141}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
