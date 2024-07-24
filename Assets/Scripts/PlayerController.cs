@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator LegAnimator;
     private Animator TorsoAnimator;
+    public Animator swordAnimator;
     bool autoCooldown = false;
+
+    
     GameObject mainWeapon;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
         inventory = GetComponent<Inventory>();
         rb = GetComponent<Rigidbody2D>();
         mainWeapon = GameObject.Find("MainWeapon");
+        swordAnimator = mainWeapon.GetComponent<Animator>();
         HP = MaxHP;
     }
 
@@ -61,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
     
 
-
+        /**
         if(Input.GetMouseButton(0)){
             //attack
             
@@ -70,6 +74,21 @@ public class PlayerController : MonoBehaviour
         if(autoCooldown){
             autoCooldown = false;
             mainWeapon.transform.eulerAngles = Vector3.zero;
+        }
+        **/
+        if (Input.GetMouseButtonDown(0)) // Check if left mouse button is pressed
+        {
+            if (swordAnimator != null)
+            {
+                swordAnimator .SetBool("isAttacking", true); // Set the bool parameter to true
+            }
+        }
+        else if (Input.GetMouseButtonUp(0)) // Check if left mouse button is released
+        {
+            if (swordAnimator  != null)
+            {
+                swordAnimator .SetBool("isAttacking", false); // Set the bool parameter to false
+            }
         }
         
     }
