@@ -32,4 +32,11 @@ public class ActivateCanvasOnTrigger : MonoBehaviour
             }
         }
     }
+
+    public void CloseCrafting()
+    {
+        canvasToActivate.SetActive(false);
+        Time.timeScale = 1;
+
+    }
 }
