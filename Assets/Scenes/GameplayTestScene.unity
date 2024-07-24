@@ -904,6 +904,7 @@ MonoBehaviour:
   pickupDistance: 3
   speed: 15
   closestItem: {fileID: 0}
+  swordAnimator: {fileID: 0}
 --- !u!4 &642151244
 Transform:
   m_ObjectHideFlags: 0
@@ -1908,6 +1909,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1613647638977349009, guid: 6a1362e820720674a8a9df8b38b6bd6d, type: 3}
+      propertyPath: isEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3437043725132071012, guid: 6a1362e820720674a8a9df8b38b6bd6d, type: 3}
       propertyPath: m_Name
       value: String bush

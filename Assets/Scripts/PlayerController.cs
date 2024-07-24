@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private Animator LegAnimator;
     private Animator TorsoAnimator;
     public Animator swordAnimator;
-    bool autoCooldown = false;
 
     
     GameObject mainWeapon;
@@ -40,11 +39,11 @@ public class PlayerController : MonoBehaviour
     {   
         //physical interaction
         if(Input.GetKeyDown(KeyCode.E)){
-            closestItem = FindClosestItemWithTag("Item");
+            closestItem = FindClosestHarvestableItem();
             if(closestItem != null &&  Vector3.Distance(transform.position, closestItem.transform.position) <= pickupDistance){
+                
                 if (inventory != null && inventory.AddItem(closestItem.GetComponent<ItemPickup>().item))
                 {
-                    Debug.Log("item");
                     transform.GetComponent<Audio>().playSound();
                     closestItem.GetComponent<Regrow>().Harvest();
                 }
@@ -53,12 +52,12 @@ public class PlayerController : MonoBehaviour
 
         //shadow interaction
         if(Input.GetKeyDown(KeyCode.Q)){
-            closestItem = FindClosestItemWithTag("Item");
+            closestItem = FindClosestHarvestableItem();
             if(closestItem != null &&  Vector3.Distance(transform.position, closestItem.transform.position) <= pickupDistance){
                 GameObject shadow = FindGameObjectInChildWithTag(closestItem,"Shadow");
                 Item shadowItem = shadow.GetComponent<ItemPickup>().item;
                 if (inventory != null && inventory.AddItem(shadowItem)){
-                    Debug.Log("Shadow item");
+                     transform.GetComponent<Audio>().playSound();
                     closestItem.GetComponent<Regrow>().Harvest();
                 }
             } 
@@ -80,14 +79,14 @@ public class PlayerController : MonoBehaviour
         {
             if (swordAnimator != null)
             {
-                swordAnimator .SetBool("isAttacking", true); // Set the bool parameter to true
+                swordAnimator.SetBool("isAttacking", true); // Set the bool parameter to true
             }
         }
         else if (Input.GetMouseButtonUp(0)) // Check if left mouse button is released
         {
             if (swordAnimator  != null)
             {
-                swordAnimator .SetBool("isAttacking", false); // Set the bool parameter to false
+                swordAnimator.SetBool("isAttacking", false); // Set the bool parameter to false
             }
         }
         
@@ -163,6 +162,32 @@ public class PlayerController : MonoBehaviour
             }
         }
         return closestItem;
+    }
+
+    GameObject FindClosestHarvestableItem()
+    {
+        GameObject[] items = GameObject.FindGameObjectsWithTag("Item");
+
+        GameObject closestItem = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject item in items)
+        {
+            ItemPickup itemPickup = item.GetComponent<ItemPickup>();
+            if(itemPickup.GetEnable()){
+                Debug.Log("itemPickup.GetEnable() == true");
+                float distance = Vector3.Distance(transform.position, item.transform.position);
+                if (distance < closestDistance && item.GetComponent<ItemPickup>().GetEnable() )
+                {
+                    closestDistance = distance;
+                    closestItem = item;
+                }
+            }
+            
+        }
+        Debug.Log(closestItem);
+        return closestItem;
+
     }
 
     public void InsanityChangeSigned(int insanity){

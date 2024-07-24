@@ -35,17 +35,13 @@ public class Inventory : MonoBehaviour
         if(items.ContainsKey(item.ID)){
             if(items[item.ID].ammount >=1){
                 items[item.ID].ammount +=1;
-                Debug.Log("Added ammount to preexisting item");
             }else{
                 items[item.ID].ammount =1;
-                Debug.Log("Added ammount to preexisting item" + item.Name);
             }
         }else{
             if (items.Count < inventorySize){
                 items.Add(item.ID,new ItemListing(item,1));
-                Debug.Log("Item added: " + item.Name);
             }else{
-                Debug.Log("Inventory is full!");
                 return false;
             }
         }   
