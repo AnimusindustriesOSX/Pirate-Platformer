@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.36552152, g: 0.45965117, b: 0.6981132, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -96,8 +96,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000004, guid: 493dc7f89992b2148acab464781d51b8, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d7198a04635b1464989007976631df78, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -829,7 +829,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -904,6 +904,7 @@ MonoBehaviour:
   pickupDistance: 3
   speed: 15
   closestItem: {fileID: 0}
+  swordAnimator: {fileID: 0}
 --- !u!4 &642151244
 Transform:
   m_ObjectHideFlags: 0
@@ -1204,7 +1205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894787633}
   - component: {fileID: 894787632}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1249,11 +1250,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -32768
+  m_SortingLayerID: -1347314047
+  m_SortingLayer: -1
+  m_SortingOrder: -10000
   m_Sprite: {fileID: 21300000, guid: f105b5a5b2f2aed4f92307b02d04e941, type: 3}
-  m_Color: {r: 0.55268776, g: 0.8679245, b: 0.6338548, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -2173,15 +2174,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2807165220923211336, guid: 15f6abedee6d8f44fbf4f69c496b1c01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.88
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 2807165220923211336, guid: 15f6abedee6d8f44fbf4f69c496b1c01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -3.59
       objectReference: {fileID: 0}
     - target: {fileID: 2807165220923211336, guid: 15f6abedee6d8f44fbf4f69c496b1c01, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2807165220923211336, guid: 15f6abedee6d8f44fbf4f69c496b1c01, type: 3}
       propertyPath: m_LocalRotation.w
