@@ -113,12 +113,12 @@ TextureImporter:
       name: Enchanted_Sword_Idle_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 13
-        width: 82
-        height: 199
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 114.333336
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5241457, y: 0.12810859}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Enchanted_Sword_Idle_1
       rect:
         serializedVersion: 2
-        x: 127
-        y: 9
-        width: 90
-        height: 199
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 114
+        y: 0
+        width: 114.333336
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5241457, y: 0.1281086}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Enchanted_Sword_Idle_2
       rect:
         serializedVersion: 2
-        x: 241
-        y: 10
-        width: 83
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 228
+        y: 0
+        width: 114.333336
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5241457, y: 0.1281086}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

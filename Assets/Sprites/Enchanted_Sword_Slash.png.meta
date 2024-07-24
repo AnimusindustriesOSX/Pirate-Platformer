@@ -113,12 +113,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_0
       rect:
         serializedVersion: 2
-        x: 351
-        y: 888
-        width: 82
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 808
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.24070907}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_1
       rect:
         serializedVersion: 2
-        x: 901
-        y: 928
-        width: 81
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 595
+        y: 808
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_2
       rect:
         serializedVersion: 2
-        x: 1461
-        y: 993
-        width: 77
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1190
+        y: 808
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_3
       rect:
         serializedVersion: 2
-        x: 1859
-        y: 811
-        width: 390
-        height: 308
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1785
+        y: 808
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_4
       rect:
         serializedVersion: 2
-        x: 601
-        y: 569
-        width: 160
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 404
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_5
       rect:
         serializedVersion: 2
-        x: 1258
-        y: 577
-        width: 115
-        height: 190
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 595
+        y: 404
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_6
       rect:
         serializedVersion: 2
-        x: 1888
-        y: 609
-        width: 101
-        height: 199
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1190
+        y: 404
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_7
       rect:
         serializedVersion: 2
-        x: 25
-        y: 473
-        width: 167
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1785
+        y: 404
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_8
       rect:
         serializedVersion: 2
-        x: 148
-        y: 111
-        width: 434
-        height: 278
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_9
       rect:
         serializedVersion: 2
-        x: 950
-        y: 97
-        width: 159
-        height: 139
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 595
+        y: 0
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,12 +323,12 @@ TextureImporter:
       name: Enchanted_Sword_Slash_10
       rect:
         serializedVersion: 2
-        x: 1545
-        y: 74
-        width: 122
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1190
+        y: 0
+        width: 595
+        height: 404
+      alignment: 9
+      pivot: {x: 0.658749, y: 0.2407091}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
