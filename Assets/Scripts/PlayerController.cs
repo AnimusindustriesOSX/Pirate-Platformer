@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public const int MaxHP = 100;
     public int strength = 10;
     public int HP;
-    public float insanity = 0f;
+    public float insanity;
     public float pickupDistance = 3;
     private Vector2 direction;
     [SerializeField] private float speed;
@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private Animator LegAnimator;
     private Animator TorsoAnimator;
     public Animator swordAnimator;
-    bool autoCooldown = false;
 
     
     GameObject mainWeapon;
@@ -33,6 +32,7 @@ public class PlayerController : MonoBehaviour
         mainWeapon = GameObject.Find("MainWeapon");
         swordAnimator = mainWeapon.GetComponent<Animator>();
         HP = MaxHP;
+        insanity=0;
     }
 
     // Update is called once per frame
@@ -40,11 +40,11 @@ public class PlayerController : MonoBehaviour
     {   
         //physical interaction
         if(Input.GetKeyDown(KeyCode.E)){
-            closestItem = FindClosestItemWithTag("Item");
+            closestItem = FindClosestHarvestableItem();
             if(closestItem != null &&  Vector3.Distance(transform.position, closestItem.transform.position) <= pickupDistance){
+                
                 if (inventory != null && inventory.AddItem(closestItem.GetComponent<ItemPickup>().item))
                 {
-                    Debug.Log("item");
                     transform.GetComponent<Audio>().playSound();
                     closestItem.GetComponent<Regrow>().Harvest();
                 }
@@ -53,12 +53,12 @@ public class PlayerController : MonoBehaviour
 
         //shadow interaction
         if(Input.GetKeyDown(KeyCode.Q)){
-            closestItem = FindClosestItemWithTag("Item");
+            closestItem = FindClosestHarvestableItem();
             if(closestItem != null &&  Vector3.Distance(transform.position, closestItem.transform.position) <= pickupDistance){
                 GameObject shadow = FindGameObjectInChildWithTag(closestItem,"Shadow");
                 Item shadowItem = shadow.GetComponent<ItemPickup>().item;
                 if (inventory != null && inventory.AddItem(shadowItem)){
-                    Debug.Log("Shadow item");
+                     transform.GetComponent<Audio>().playSound();
                     closestItem.GetComponent<Regrow>().Harvest();
                 }
             } 
@@ -80,14 +80,14 @@ public class PlayerController : MonoBehaviour
         {
             if (swordAnimator != null)
             {
-                swordAnimator .SetBool("isAttacking", true); // Set the bool parameter to true
+                swordAnimator.SetBool("isAttacking", true); // Set the bool parameter to true
             }
         }
         else if (Input.GetMouseButtonUp(0)) // Check if left mouse button is released
         {
             if (swordAnimator  != null)
             {
-                swordAnimator .SetBool("isAttacking", false); // Set the bool parameter to false
+                swordAnimator.SetBool("isAttacking", false); // Set the bool parameter to false
             }
         }
         
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Shadow")){
-            InsanityChangeSigned(1);
+            InsanityChangeSigned(other.GetComponentInParent<Enemy>().shadowCollisionDamage);//other.gameObject.GetComponent<Enemy>().shadowCollisionDamage);
         }
     }
     
@@ -165,10 +165,35 @@ public class PlayerController : MonoBehaviour
         return closestItem;
     }
 
-    public void InsanityChangeSigned(int insanity){
-        this.insanity += insanity;
-        if(insanity > 100) insanity=100;
-        if(insanity < 0) insanity=0;
-        //Debug.Log("insanity +=" + insanity);
+    GameObject FindClosestHarvestableItem()
+    {
+        GameObject[] items = GameObject.FindGameObjectsWithTag("Item");
+
+        GameObject closestItem = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject item in items)
+        {
+            ItemPickup itemPickup = item.GetComponent<ItemPickup>();
+            if(itemPickup.GetEnable()){
+                Debug.Log("itemPickup.GetEnable() == true");
+                float distance = Vector3.Distance(transform.position, item.transform.position);
+                if (distance < closestDistance && item.GetComponent<ItemPickup>().GetEnable() )
+                {
+                    closestDistance = distance;
+                    closestItem = item;
+                }
+            }
+            
+        }
+        Debug.Log(closestItem);
+        return closestItem;
+
+    }
+
+    public void InsanityChangeSigned(int insanityChange){
+        insanity += insanityChange;
+        if(insanity > 200){insanity=200;} 
+        if(insanity < 0){insanity=0;} 
     }
 }

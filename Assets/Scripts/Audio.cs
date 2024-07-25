@@ -16,7 +16,6 @@ public class Audio : MonoBehaviour
 
     public void playSound(){
         clipIndex = UnityEngine.Random.Range(0, audioClips.Length);
-        Debug.Log("!:" + clipIndex);
         gameObject.GetComponent<AudioSource> ().clip = audioClips[clipIndex];
         audioSource.Play();
     }
