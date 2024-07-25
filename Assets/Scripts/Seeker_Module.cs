@@ -23,6 +23,10 @@ public class Seeker_Module : MonoBehaviour
     private Vector2 end;
     private float distanceOffSet;
 
+    
+    public bool doesLookAtTarget = true;
+    public Transform childToRotate;
+    
     [Header("Debug")]
     [SerializeField]  public bool isTargetOnRight;
     
@@ -34,6 +38,16 @@ public class Seeker_Module : MonoBehaviour
     
     void Update()
     {
+        
+        if(doesLookAtTarget && childToRotate != null){
+
+            if(isTargetOnRight)childToRotate.localScale = new Vector3(-1,1,1);
+            else childToRotate.localScale = new Vector3(1,1,1);
+        }
+        
+        
+        
+        
         
         if (target == null)
             target = GameObject.FindWithTag("Player").GetComponent<Transform>();

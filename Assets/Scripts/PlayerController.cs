@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public const int MaxHP = 100;
     public int strength = 10;
     public int HP;
-    public float insanity;
+    public int insanity;
     public float pickupDistance = 3;
     private Vector2 direction;
     [SerializeField] private float speed;
