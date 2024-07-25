@@ -1,79 +1,109 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-[Serializable]
-public class ItemListing{ 
-    public ItemListing(Item item, int ammount) {
+[System.Serializable]
+public class ItemListing
+{
+    public Item item;
+    public int amount;
+
+    public ItemListing(Item item, int amount)
+    {
         this.item = item;
-        this.ammount = ammount;
+        this.amount = amount;
     }
-    [SerializeField]public Item item;
-    [SerializeField]public int ammount;
 }
+
 public class Inventory : MonoBehaviour
 {
+    public static Inventory Instance { get; private set; }
+
     public List<ItemListing> inventory = new();
-    public Dictionary<int,ItemListing> items = new();
+    public Dictionary<int, ItemListing> items = new();
     public int inventorySize = 20;
-    private void Start() {
+    public InventoryUI inventoryUI; // Reference to the InventoryUI component
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
         inventory.Clear();
     }
 
-    public void populateInventory(){
+    public void populateInventory()
+    {
         inventory.Clear();
-        foreach(KeyValuePair<int,ItemListing> itemListing in items){
-            inventory.Add(new ItemListing(itemListing.Value.item,itemListing.Value.ammount));
-            Debug.Log("item added");
+        foreach (KeyValuePair<int, ItemListing> itemListing in items)
+        {
+            inventory.Add(new ItemListing(itemListing.Value.item, itemListing.Value.amount));
         }
-        
     }
 
     public bool AddItem(Item item)
     {
-        if(items.ContainsKey(item.ID)){
-            if(items[item.ID].ammount >=1){
-                items[item.ID].ammount +=1;
-                Debug.Log("Added ammount to preexisting item");
-            }else{
-                items[item.ID].ammount =1;
-                Debug.Log("Added ammount to preexisting item" + item.Name);
+        if (items.ContainsKey(item.ID))
+        {
+            items[item.ID].amount += 1;
+        }
+        else
+        {
+            if (items.Count < inventorySize)
+            {
+                items.Add(item.ID, new ItemListing(item, 1));
             }
-        }else{
-            if (items.Count < inventorySize){
-                items.Add(item.ID,new ItemListing(item,1));
-                Debug.Log("Item added: " + item.Name);
-            }else{
-                Debug.Log("Inventory is full!");
-                return false;
+            else
+            {
+                return false; // Inventory full
             }
-        }   
+        }
         populateInventory();
-        return true;         
+        NotifyInventoryChanged();
+        return true;
     }
 
-
-    public void RemoveItem(Item item){
-        if (items.ContainsKey(item.ID)){
+    public void RemoveItem(Item item)
+    {
+        if (items.ContainsKey(item.ID))
+        {
             items.Remove(item.ID);
-            Debug.Log("Removed: " + item.Name);
             populateInventory();
-        }else{
-            Debug.Log("Tried to remove item:"  + item.Name + "but it wasn't found: ");
-            populateInventory();
+            NotifyInventoryChanged();
         }
     }
 
-    public void ReduceItem(Item item){
-        if (items.ContainsKey(item.ID)){
-            items[item.ID].ammount --;
-            Debug.Log("Removed 1 instance of: " + item.Name);
-        }else{
-            Debug.Log("Tried to remove item:"  + item.Name + "but it wasn't found: ");
+    public void ReduceItem(Item item)
+    {
+        if (items.ContainsKey(item.ID))
+        {
+            items[item.ID].amount--;
+            if (items[item.ID].amount <= 0)
+            {
+                items.Remove(item.ID);
+            }
+            populateInventory();
+            NotifyInventoryChanged();
         }
     }
 
+    public delegate void InventoryChanged();
+    public event InventoryChanged OnInventoryChanged;
 
-    
+    private void NotifyInventoryChanged()
+    {
+        OnInventoryChanged?.Invoke();
+        if (inventoryUI != null)
+        {
+            inventoryUI.RefreshUI();
+        }
+    }
 }
