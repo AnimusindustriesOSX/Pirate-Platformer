@@ -27,13 +27,14 @@ public class UserInterfaceController : MonoBehaviour
     {
         insanity = playerController.insanity;
         if(insanitySlider != null) {
-            Slider insanityBar = insanitySlider.GetComponent<Slider>();
-            insanityBar.minValue = 0;
-            insanityBar.maxValue = maxInsanity;
-            insanityBar.value = insanity;
+            Image insanityBar = insanitySlider.GetComponent<Image>();
+            //insanityBar.minValue = 0;
+            //insanityBar.maxValue = maxInsanity;
+            //insanityBar.value = insanity;
 
             if(insanityEye != null) {
-                if(insanityBar.maxValue <= insanityBar.value){
+                
+                if(insanityBar.fillAmount == 1){
                     insanityEye.transform.GetComponent<Animator>().SetBool("isInsane",true);
 
                 }
