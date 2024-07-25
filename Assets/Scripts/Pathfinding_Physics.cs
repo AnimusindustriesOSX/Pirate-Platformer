@@ -9,6 +9,8 @@ public class Pathfinding_Physics : MonoBehaviour
     
     
     [SerializeField] public float aggroTime;
+
+    
     
     public bool isAIactive = true;
     public Transform target; // Player target
@@ -25,6 +27,10 @@ public class Pathfinding_Physics : MonoBehaviour
     private Vector2 wanderCenter;
     
     private float secAggro;
+    
+    [Header("Attack")]
+    public float attackRange;
+    public Transform attackOrgan;
     
     void Start()
     {
@@ -62,6 +68,15 @@ public class Pathfinding_Physics : MonoBehaviour
                     isIdle = true;
                     secAggro = 0;
                 }
+
+
+                if(attackRange >= distanceToPlayer){
+                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", true);
+                }
+                else{
+                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", false);
+                }
+
                 }
                 /**
                 if (distanceToPlayer <= detectionRadius)
