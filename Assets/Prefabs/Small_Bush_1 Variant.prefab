@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small_Bush_1_Shadw
       objectReference: {fileID: 0}
+    - target: {fileID: 7060036546815073864, guid: 6a1362e820720674a8a9df8b38b6bd6d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8380809481342409628, guid: 6a1362e820720674a8a9df8b38b6bd6d, type: 3}
       propertyPath: m_Sprite
       value: 
