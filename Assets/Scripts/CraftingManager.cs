@@ -94,7 +94,7 @@ public class CraftingManager : MonoBehaviour
     private bool CanPlaceItem(CraftingItem craftingItem)
     {
         ItemListing itemListing;
-        return playerInventory.items.TryGetValue(craftingItem.ID, out itemListing) && itemListing.ammount > 0;
+        return playerInventory.items.TryGetValue(craftingItem.ID, out itemListing) && itemListing.amount > 0;
     }
 
     private void CheckForCreatedRecipes()
