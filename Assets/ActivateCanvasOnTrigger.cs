@@ -4,6 +4,8 @@ public class ActivateCanvasOnTrigger : MonoBehaviour
 {
     // Reference to the Canvas you want to activate
     public GameObject canvasToActivate;
+    public GameObject canvasToSwap;
+
 
     // Tag to identify the player
     public string playerTag = "Player";
@@ -37,6 +39,13 @@ public class ActivateCanvasOnTrigger : MonoBehaviour
     {
         canvasToActivate.SetActive(false);
         Time.timeScale = 1;
+
+    }
+
+    public void SwapCrafting()
+    {
+        canvasToActivate.SetActive(false);
+        canvasToSwap.SetActive(true);
 
     }
 }
