@@ -1,20 +1,20 @@
 using System.Collections;
-using System.Collections.Generic; // Required for List<T>
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour
 {
-    private CraftingItem currentItem;
-    public Image customCursor;
-    public CraftingSlot[] craftingSlots;
-    public List<CraftingItem> itemList; // Ensure List<T> is recognized
-    public string[] recipes;
-    public CraftingItem[] recipeResults;
-    public CraftingSlot resultSlot;
+    private CraftingItem currentItem; // The item currently being interacted with
+    public Image customCursor; // The image for the custom cursor to show the item being dragged
+    public CraftingSlot[] craftingSlots; // Slots available for crafting items
+    public List<CraftingItem> itemList; // Current items in crafting slots
+    public string[] recipes; // Recipe identifiers as strings
+    public CraftingItem[] recipeResults; // The results of crafting specific recipes
+    public CraftingSlot resultSlot; // Slot to display crafted result
+    public Inventory playerInventory; // The player's inventory
 
-    public Inventory playerInventory; // Reference to the player's inventory
-
+    public GameObject CraftingCanvas;
     private void Start()
     {
         // Find the player GameObject by tag and get its Inventory component
@@ -35,37 +35,23 @@ public class CraftingManager : MonoBehaviour
 
     private void Update()
     {
+        // Handle mouse release to place item into crafting slot
         if (Input.GetMouseButtonUp(0))
         {
             if (currentItem != null)
             {
                 customCursor.gameObject.SetActive(false);
-                CraftingSlot nearestSlot = null;
-                float shortestDistance = float.MaxValue;
-
-                foreach (CraftingSlot slot in craftingSlots)
-                {
-                    float dist = Vector2.Distance(Input.mousePosition, slot.transform.position);
-                    if (dist < shortestDistance)
-                    {
-                        shortestDistance = dist;
-                        nearestSlot = slot;
-                    }
-                }
+                CraftingSlot nearestSlot = FindNearestSlot();
 
                 if (nearestSlot != null)
                 {
                     if (CanPlaceItem(currentItem))
                     {
-                        nearestSlot.gameObject.SetActive(true);
-                        nearestSlot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
-                        nearestSlot.item = currentItem;
-                        itemList[nearestSlot.index] = currentItem;
-                        playerInventory.ReduceItem(currentItem.item); // Update inventory count
+                        PlaceItemInSlot(nearestSlot);
                     }
                     else
                     {
-                        Debug.Log("Not enough " + currentItem.itemName + " in inventory.");
+                        Debug.Log($"Not enough {currentItem.itemName} in inventory.");
                     }
                 }
 
@@ -73,6 +59,36 @@ public class CraftingManager : MonoBehaviour
                 CheckForCreatedRecipes();
             }
         }
+    }
+
+    private CraftingSlot FindNearestSlot()
+    {
+        CraftingSlot nearestSlot = null;
+        float shortestDistance = float.MaxValue;
+
+        foreach (CraftingSlot slot in craftingSlots)
+        {
+            float dist = Vector2.Distance(Input.mousePosition, slot.transform.position);
+            if (dist < shortestDistance)
+            {
+                shortestDistance = dist;
+                nearestSlot = slot;
+            }
+        }
+
+        return nearestSlot;
+    }
+
+    private void PlaceItemInSlot(CraftingSlot slot)
+    {
+        slot.gameObject.SetActive(true);
+        slot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
+        slot.item = currentItem;
+        itemList[slot.index] = currentItem;
+
+        // Reduce item count in inventory immediately after placing
+        playerInventory.ReduceItem(currentItem.item);
+        Debug.Log($"Placed {currentItem.itemName} into crafting slot and reduced from inventory.");
     }
 
     private bool CanPlaceItem(CraftingItem craftingItem)
@@ -86,58 +102,54 @@ public class CraftingManager : MonoBehaviour
         resultSlot.gameObject.SetActive(false);
         resultSlot.item = null;
 
-        string currentRecipeString = "";
-        foreach (CraftingItem item in itemList)
-        {
-            if (item != null)
-            {
-                currentRecipeString += item.itemName;
-            }
-            else
-            {
-                currentRecipeString += "null";
-            }
-        }
+        string currentRecipeString = CreateRecipeString();
 
         for (int i = 0; i < recipes.Length; i++)
         {
             if (recipes[i] == currentRecipeString)
             {
-                resultSlot.gameObject.SetActive(true);
-                resultSlot.GetComponent<Image>().sprite = recipeResults[i].GetComponent<Image>().sprite;
-                resultSlot.item = recipeResults[i];
-                DeductItemsForRecipe(currentRecipeString);
-
-                StartCoroutine(FlashAndAddToInventory(resultSlot.item));
+                ShowCraftingResult(i);
+                break; // Stop checking once a match is found
             }
         }
     }
 
-    private IEnumerator FlashAndAddToInventory(CraftingItem craftedItem)
+    private string CreateRecipeString()
     {
-        Image resultImage = resultSlot.GetComponent<Image>();
-        for (int i = 0; i < 6; i++) // Flash 3 times
-        {
-            resultImage.enabled = !resultImage.enabled;
-            yield return new WaitForSeconds(0.25f);
-        }
-
-        if (craftedItem != null)
-        {
-            playerInventory.AddItem(craftedItem.item);
-        }
-
-        resultSlot.gameObject.SetActive(false);
-        resultSlot.item = null;
-    }
-
-    private void DeductItemsForRecipe(string currentRecipeString)
-    {
+        string recipeString = "";
         foreach (CraftingItem item in itemList)
         {
             if (item != null)
             {
-                playerInventory.ReduceItem(item.item);
+                recipeString += item.itemName;
+            }
+            else
+            {
+                recipeString += "null";
+            }
+        }
+        return recipeString;
+    }
+
+    private void ShowCraftingResult(int recipeIndex)
+    {
+        resultSlot.gameObject.SetActive(true);
+        resultSlot.GetComponent<Image>().sprite = recipeResults[recipeIndex].GetComponent<Image>().sprite;
+        resultSlot.item = recipeResults[recipeIndex];
+
+        Debug.Log(recipeResults[recipeIndex].itemName + " crafted.");
+    }
+
+    private void ClearCraftingSlots()
+    {
+        foreach (CraftingSlot slot in craftingSlots)
+        {
+            if (slot.item != null)
+            {
+                slot.item = null;
+                slot.GetComponent<Image>().sprite = null; // Clear the sprite
+                slot.gameObject.SetActive(false);
+                itemList[slot.index] = null;
             }
         }
     }
@@ -161,6 +173,28 @@ public class CraftingManager : MonoBehaviour
             currentItem = item;
             customCursor.gameObject.SetActive(true);
             customCursor.sprite = currentItem.GetComponent<Image>().sprite;
+        }
+    }
+
+    public void OnClickResultSlot()
+    {
+        if (resultSlot.item != null)
+        {
+            // Add the crafted item to the inventory
+            playerInventory.AddItem(resultSlot.item.item);
+
+            // Log the successful addition
+            Debug.Log("Added crafted item to inventory: " + resultSlot.item.itemName);
+
+            CraftingCanvas.SetActive(false);
+            Time.timeScale = 1;
+
+            // Clear the crafting slots and reset them
+            ClearCraftingSlots();
+
+            // Hide the result slot after adding to inventory
+            resultSlot.gameObject.SetActive(false);
+            resultSlot.item = null;
         }
     }
 }
