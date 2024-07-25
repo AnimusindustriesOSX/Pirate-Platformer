@@ -8,7 +8,7 @@ public class UserInterfaceController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] int health = 100;
-    [SerializeField] int insanity = 100;
+    [SerializeField] int insanity;
 
     [SerializeField] int maxHealth = 100;
     [SerializeField] int maxInsanity = 100;
@@ -16,11 +16,16 @@ public class UserInterfaceController : MonoBehaviour
     [SerializeField] GameObject insanitySlider;
     [SerializeField] GameObject healthSlider;
     [SerializeField] GameObject insanityEye;
-    
+    PlayerController playerController;
+    void Start(){
+        insanity = 0;
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        insanity = playerController.insanity;
         if(insanitySlider != null) {
             Slider insanityBar = insanitySlider.GetComponent<Slider>();
             insanityBar.minValue = 0;
