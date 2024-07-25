@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public int collisionDamage;
+    public int shadowCollisionDamage = 0;
+    public int collisionDamage = 0;
     
     
 

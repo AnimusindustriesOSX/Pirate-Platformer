@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public const int MaxHP = 100;
     public int strength = 10;
     public int HP;
-    public float insanity = 0f;
+    public float insanity;
     public float pickupDistance = 3;
     private Vector2 direction;
     [SerializeField] private float speed;
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         mainWeapon = GameObject.Find("MainWeapon");
         swordAnimator = mainWeapon.GetComponent<Animator>();
         HP = MaxHP;
+        insanity=0;
     }
 
     // Update is called once per frame
@@ -116,7 +117,7 @@ public class PlayerController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Shadow")){
-            InsanityChangeSigned(1);
+            InsanityChangeSigned(other.GetComponentInParent<Enemy>().shadowCollisionDamage);//other.gameObject.GetComponent<Enemy>().shadowCollisionDamage);
         }
     }
     
@@ -190,10 +191,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void InsanityChangeSigned(int insanity){
-        this.insanity += insanity;
-        if(insanity > 100) insanity=100;
-        if(insanity < 0) insanity=0;
-        //Debug.Log("insanity +=" + insanity);
+    public void InsanityChangeSigned(int insanityChange){
+        insanity += insanityChange;
+        if(insanity > 200){insanity=200;} 
+        if(insanity < 0){insanity=0;} 
     }
 }
