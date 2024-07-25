@@ -7,7 +7,7 @@ public class ItemPickup : MonoBehaviour
     public bool IsEnabled;
 
     private void Start() {
-        ChangeEnable(true);
+        IsEnabled = true;
     }
 
     public void ChangeEnable (bool enabled){

@@ -61,15 +61,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void ReduceItem(Item item){
+    public bool ReduceItem(Item item){
         if (items.ContainsKey(item.ID)){
             items[item.ID].ammount --;
             Debug.Log("Removed 1 instance of: " + item.Name);
+            return true;
         }else{
             Debug.Log("Tried to remove item:"  + item.Name + "but it wasn't found: ");
+            return false;
         }
     }
-
-
-    
 }

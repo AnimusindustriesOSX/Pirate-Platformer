@@ -7,5 +7,12 @@ public class Item
     public int ID;
     public bool isShadow;
     public Sprite Icon;
+    virtual public void Effect(){
+
+    }
+
+    private void Start() {
+        
+    }
 
 }

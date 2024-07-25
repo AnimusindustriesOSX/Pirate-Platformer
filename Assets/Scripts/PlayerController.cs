@@ -174,19 +174,20 @@ public class PlayerController : MonoBehaviour
 
         foreach (GameObject item in items)
         {
-            ItemPickup itemPickup = item.GetComponent<ItemPickup>();
-            if(itemPickup.GetEnable()){
-                Debug.Log("itemPickup.GetEnable() == true");
-                float distance = Vector3.Distance(transform.position, item.transform.position);
-                if (distance < closestDistance && item.GetComponent<ItemPickup>().GetEnable() )
-                {
-                    closestDistance = distance;
-                    closestItem = item;
+            if(item.GetComponent<ItemPickup>()!= null){
+                if(item.GetComponent<ItemPickup>().GetEnable()){
+                
+                    float distance = Vector3.Distance(transform.position, item.transform.position);
+                    if (distance < closestDistance && item.GetComponent<ItemPickup>().GetEnable() )
+                    {
+                        Debug.Log("item found");
+                        closestDistance = distance;
+                        closestItem = item;
+                    }
                 }
             }
-            
         }
-        Debug.Log(closestItem);
+       
         return closestItem;
 
     }
@@ -195,5 +196,11 @@ public class PlayerController : MonoBehaviour
         insanity += insanityChange;
         if(insanity > 200){insanity=200;} 
         if(insanity < 0){insanity=0;} 
+    }
+
+    public void consumeItem(Item item){
+        if(inventory.ReduceItem(item)){
+            item.Effect();
+        }
     }
 }
