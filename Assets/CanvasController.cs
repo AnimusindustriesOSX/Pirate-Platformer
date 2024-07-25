@@ -12,4 +12,11 @@ public class CanvasController : MonoBehaviour
         canvasToActivate.SetActive(false);
         canvasToSwap.SetActive(true);
     }
+
+    public void CloseCrafting()
+    {
+        canvasToActivate.SetActive(false);
+        Time.timeScale = 1;
+
+    }
 }

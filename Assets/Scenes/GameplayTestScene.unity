@@ -2385,6 +2385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shade_ravager
       objectReference: {fileID: 0}
+    - target: {fileID: 1954229216392352262, guid: 1ba902b35835701448f4fd8818d77a76, type: 3}
+      propertyPath: shadowCollisionDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3770465217641783154, guid: 1ba902b35835701448f4fd8818d77a76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.01

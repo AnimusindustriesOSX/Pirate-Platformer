@@ -89,10 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987f3f251fafba144b9fd01c8033ea3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: VitalityPotion
+  itemName: RampagePotion
   ID: 23
   item:
-    Name: VitalityPotion
+    Name: RampagePotion
     ID: 23
     isShadow: 0
     Icon: {fileID: 1846314501, guid: bf47f7a689790dc4ea81f743a690d696, type: 3}
