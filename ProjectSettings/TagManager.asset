@@ -11,6 +11,7 @@ TagManager:
   - Physical
   - Player-shadow-attack
   - Physical-attack
+  - ConsumablesCanvas
   layers:
   - Default
   - TransparentFX

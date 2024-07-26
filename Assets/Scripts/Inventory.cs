@@ -16,24 +16,10 @@ public class ItemListing
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory Instance { get; private set; }
-
     public List<ItemListing> inventory = new();
     public Dictionary<int, ItemListing> items = new();
     public int inventorySize = 20;
     public InventoryUI inventoryUI; // Reference to the InventoryUI component
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private void Start()
     {
@@ -80,8 +66,8 @@ public class Inventory : MonoBehaviour
             NotifyInventoryChanged();
         }
     }
-
-    public void ReduceItem(Item item)
+    
+    public bool ReduceItem(Item item)
     {
         if (items.ContainsKey(item.ID))
         {
@@ -92,7 +78,9 @@ public class Inventory : MonoBehaviour
             }
             populateInventory();
             NotifyInventoryChanged();
+            return true;
         }
+        return false;
     }
 
     public delegate void InventoryChanged();
@@ -105,5 +93,16 @@ public class Inventory : MonoBehaviour
         {
             inventoryUI.RefreshUI();
         }
+    }
+
+    public ItemListing getItemListingByID(int id){
+        if (items.ContainsKey(id))
+        {
+            return items[id];
+        }else{
+            Debug.Log("Null returning");
+            return null;
+        }
+
     }
 }

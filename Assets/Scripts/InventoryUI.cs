@@ -4,8 +4,8 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    public TextMeshProUGUI[] itemTextDisplays = new TextMeshProUGUI[13];
-
+    public TextMeshProUGUI[] itemTextDisplays = new TextMeshProUGUI[14];
+    public Inventory inventory;
     private Dictionary<int, int> itemIdToDisplayIndex = new Dictionary<int, int>
     {
         { 1, 0 },
@@ -24,7 +24,8 @@ public class InventoryUI : MonoBehaviour
     };
 
     private void Start()
-    {
+    {   
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         if (itemTextDisplays.Length == 0)
         {
             Debug.LogError("No TextMeshProUGUI elements assigned to itemTextDisplays.");
@@ -32,9 +33,9 @@ public class InventoryUI : MonoBehaviour
         }
 
         // Register to the Inventory's event
-        if (Inventory.Instance != null)
+        if (inventory != null)
         {
-            Inventory.Instance.OnInventoryChanged += UpdateTextDisplays;
+            inventory.OnInventoryChanged += UpdateTextDisplays;
             UpdateTextDisplays(); // Initial update
         }
         else
@@ -45,15 +46,15 @@ public class InventoryUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Inventory.Instance != null)
+        if (inventory != null)
         {
-            Inventory.Instance.OnInventoryChanged -= UpdateTextDisplays;
+            inventory.OnInventoryChanged -= UpdateTextDisplays;
         }
     }
 
     private void UpdateTextDisplays()
     {
-        if (Inventory.Instance == null)
+        if (inventory == null)
         {
             Debug.LogError("Inventory instance is null during UpdateTextDisplays.");
             return;
@@ -71,7 +72,7 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        foreach (var itemListing in Inventory.Instance.items)
+        foreach (var itemListing in inventory.items)
         {
             if (itemIdToDisplayIndex.TryGetValue(itemListing.Key, out int displayIndex))
             {

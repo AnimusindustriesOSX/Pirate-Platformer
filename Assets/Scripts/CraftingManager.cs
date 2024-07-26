@@ -184,7 +184,7 @@ public class CraftingManager : MonoBehaviour
             playerInventory.AddItem(resultSlot.item.item);
 
             // Log the successful addition
-            Debug.Log("Added crafted item to inventory: " + resultSlot.item.itemName);
+            Debug.Log("Added crafted item to inventory: " + resultSlot.item.item.Name + resultSlot.item.item.ID);
 
             CraftingCanvas.SetActive(false);
             Time.timeScale = 1;

@@ -7,8 +7,21 @@ public class Item
     public int ID;
     public bool isShadow;
     public Sprite Icon;
-    virtual public void Effect(){
-
+    public void Effect(){
+        switch (ID){
+            case 21:
+                return;
+            case 22:
+                return;
+            case 23:
+                return;
+            case 24:
+                return;
+            case 31:
+                return;
+            case 32:
+                return;
+        }
     }
 
     private void Start() {

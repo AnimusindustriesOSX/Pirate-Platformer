@@ -19,12 +19,15 @@ public class PlayerController : MonoBehaviour
     private Animator LegAnimator;
     private Animator TorsoAnimator;
     public Animator swordAnimator;
+    public Item selectedItem;
+    public int selectedItemSlot;
 
     
     GameObject mainWeapon;
     // Start is called before the first frame update
     void Start()
     {
+        
         TorsoAnimator = GameObject.Find("body").GetComponent<Animator>();
         LegAnimator = GameObject.Find("legs").GetComponent<Animator>();
         inventory = GetComponent<Inventory>();
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
         swordAnimator = mainWeapon.GetComponent<Animator>();
         HP = MaxHP;
         insanity=0;
+        selectedItem = null;
     }
 
     // Update is called once per frame
@@ -63,19 +67,102 @@ public class PlayerController : MonoBehaviour
                 }
             } 
         }
+
+
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            try{
+                ItemListing itemListing = inventory.getItemListingByID(21);
+                if(itemListing != null && itemListing.amount>=1){
+                    selectedItem = itemListing.item;
+                    selectedItemSlot = 1;
+                    ConsumablesCanvas.updateSelectedConsumable(selectedItemSlot);
+                }
+            } 
+            catch (System.Exception e)
+            {
+                Debug.Log("Can't select item you don't have: " + e.Message);
+            }
+            
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)){
+            try{
+                ItemListing itemListing = inventory.getItemListingByID(22);
+                if (itemListing != null && itemListing.amount >= 1){
+                    selectedItem = itemListing.item;
+                    selectedItemSlot = 2;
+                    ConsumablesCanvas.updateSelectedConsumable(selectedItemSlot);
+                }
+                else
+                {
+                    Debug.Log("Item not found or insufficient amount");
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log("Can't select item you don't have: " + e.Message);
+            }
+        }
+    
+        if(Input.GetKeyDown(KeyCode.Alpha3)){
+            try{
+                ItemListing itemListing = inventory.getItemListingByID(23);
+                if(itemListing != null && itemListing.amount>=1){
+                    selectedItem = itemListing.item;
+                    selectedItemSlot = 3;
+                    ConsumablesCanvas.updateSelectedConsumable(selectedItemSlot);
+                }
+            } catch (System.Exception e)
+            {
+                Debug.Log("Can't select item you don't have: " + e.Message);
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha4)){
+            try{
+                ItemListing itemListing = inventory.getItemListingByID(24);
+                if(itemListing != null && itemListing.amount>=1){
+                    selectedItem = itemListing.item;
+                    selectedItemSlot = 4;
+                    ConsumablesCanvas.updateSelectedConsumable(selectedItemSlot);
+                }
+            } catch (System.Exception e)
+            {
+                Debug.Log("Can't select item you don't have: " + e.Message);
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha5)){
+            try{
+                ItemListing itemListing = inventory.getItemListingByID(31);
+                if(itemListing != null && itemListing.amount>=1){
+                    selectedItem = itemListing.item;
+                    selectedItemSlot = 5;
+                    ConsumablesCanvas.updateSelectedConsumable(selectedItemSlot);
+                }
+            } catch (System.Exception e)
+            {
+                Debug.Log("Can't select item you don't have: " + e.Message);
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha6)){
+            try{
+                ItemListing itemListing = inventory.getItemListingByID(32);
+                if(itemListing != null && itemListing.amount>=1){
+                    selectedItem = itemListing.item;
+                    selectedItemSlot = 6;
+                    ConsumablesCanvas.updateSelectedConsumable(selectedItemSlot);
+                }
+            } catch (System.Exception e)
+            {
+                Debug.Log("Can't select item you don't have: " + e.Message);
+            }
+        }
+    
+        if (Input.GetKeyDown(KeyCode.Space)){
+            if(selectedItem!=null){
+                useItem(selectedItem);
+            }
+        }
     
 
-        /**
-        if(Input.GetMouseButton(0)){
-            //attack
-            
-            autoCooldown = true;
-        }
-        if(autoCooldown){
-            autoCooldown = false;
-            mainWeapon.transform.eulerAngles = Vector3.zero;
-        }
-        **/
         if (Input.GetMouseButtonDown(0)) // Check if left mouse button is pressed
         {
             if (swordAnimator != null)
@@ -180,7 +267,6 @@ public class PlayerController : MonoBehaviour
                     float distance = Vector3.Distance(transform.position, item.transform.position);
                     if (distance < closestDistance && item.GetComponent<ItemPickup>().GetEnable() )
                     {
-                        Debug.Log("item found");
                         closestDistance = distance;
                         closestItem = item;
                     }
@@ -198,9 +284,10 @@ public class PlayerController : MonoBehaviour
         if(insanity < 0){insanity=0;} 
     }
 
-    public void consumeItem(Item item){
+    public void useItem(Item item){
         if(inventory.ReduceItem(item)){
             item.Effect();
+            Debug.Log("ITEM USED" + item);
         }
     }
 }
