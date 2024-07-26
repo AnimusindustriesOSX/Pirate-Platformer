@@ -13,7 +13,9 @@ public class Seeker_Module : MonoBehaviour
 
     [SerializeField] public LayerMask obstacleLayer;
 
-    [SerializeField] public bool isTargetDetected;
+    public bool isTargetDetected;
+    public bool isTargetInRange;
+
 
     [SerializeField] float distanceToPlayerX;
     [SerializeField] float distanceToPlayerY;
@@ -59,7 +61,7 @@ public class Seeker_Module : MonoBehaviour
         distanceToPlayerY = math.abs(transform.position.y - target.position.y);
         if (distanceToPlayerX <= aggroRangeX && distanceToPlayerY <= aggroRangeY)
             {
-                
+                isTargetInRange = true;
                 Color rayColor;
                 
                 
@@ -94,6 +96,7 @@ public class Seeker_Module : MonoBehaviour
             }
         else{
             isTargetDetected = false;
+            isTargetInRange = false;
         }
     }
 }

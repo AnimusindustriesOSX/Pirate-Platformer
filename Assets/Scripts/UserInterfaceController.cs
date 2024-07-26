@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UserInterfaceController : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] int health = 100;
+    [SerializeField] float health = 100;
     [SerializeField] int insanity;
 
     [SerializeField] int maxHealth = 100;
@@ -46,7 +46,8 @@ public class UserInterfaceController : MonoBehaviour
         if(healthSlider != null) {
             Slider healthBar = healthSlider.GetComponent<Slider>();
             healthBar.minValue= 0;
-            healthBar.maxValue = maxHealth;
+            healthBar.maxValue = 100;
+            health=playerController.HP;
             healthBar.value = health;
         }
 

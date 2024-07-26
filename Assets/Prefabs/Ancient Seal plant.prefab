@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5534022548163414841}
@@ -103,6 +103,7 @@ MonoBehaviour:
     ID: 4
     isShadow: 0
     Icon: {fileID: -44866225, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  IsEnabled: 0
 --- !u!114 &883117686055747437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +150,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 21.22, y: 1, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3278836518423570802}
@@ -237,6 +238,7 @@ MonoBehaviour:
     ID: 4
     isShadow: 0
     Icon: {fileID: 1572564603, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  IsEnabled: 0
 --- !u!114 &5116397071132773935
 MonoBehaviour:
   m_ObjectHideFlags: 0

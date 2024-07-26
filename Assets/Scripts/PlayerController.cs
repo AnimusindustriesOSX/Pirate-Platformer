@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public const int MaxHP = 100;
+    public const float MaxHP = 100;
     public int strength = 10;
-    public int HP;
+    public float HP;
     public int insanity;
     public float pickupDistance = 3;
     private Vector2 direction;
@@ -203,20 +203,27 @@ public class PlayerController : MonoBehaviour
     
     
     void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Shadow")){
-            InsanityChangeSigned(other.GetComponentInParent<Enemy>().shadowCollisionDamage);//other.gameObject.GetComponent<Enemy>().shadowCollisionDamage);
+        if(other.gameObject.CompareTag("Enemy")){
+            insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage;
+            HP -= other.GetComponentInParent<Enemy>().collisionDamage;
         }
+        
+        
+            
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {   
         rb.velocity = Vector2.zero;
+        //dont use event actions on collision thats what trigger is for. it becomes rippy
+        /**
         HP -= 10;
         if(collision.gameObject.CompareTag("Physical-attack")){
             HP -= collision.gameObject.GetComponent<Enemy>().collisionDamage ;
         }else if(collision.gameObject.CompareTag("Shadow")){ 
             InsanityChangeSigned(2);
         }
+        **/
     }
 
     public static GameObject FindGameObjectInChildWithTag (GameObject parent, string tag)
@@ -290,4 +297,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ITEM USED" + item);
         }
     }
+    
+    
 }
