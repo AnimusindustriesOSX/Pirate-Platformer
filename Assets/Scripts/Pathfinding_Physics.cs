@@ -13,6 +13,8 @@ public class Pathfinding_Physics : MonoBehaviour
     
     [Header("AI")]
     public bool isAIactive = true;
+    public bool needDirectVision = true;
+    public bool doesFollowWithoutSeekerModule = false;
     public Transform target; // Player target
     public Transform homePosition; // Home position for the character
 
@@ -33,8 +35,9 @@ public class Pathfinding_Physics : MonoBehaviour
     
     [Header("Attack")]
     public float attackRange;
+    public bool doesLookAtTarget;
     public Transform attackOrgan;
-
+    private bool aiRotate = false;
     public float speedMultiplierDuringAttack;
     
     void Start()
@@ -46,6 +49,7 @@ public class Pathfinding_Physics : MonoBehaviour
         idleTimer = idleTime;
         isIdle = true;
         wanderCenter = homePosition.position;
+        aiRotate = aiPath.enableRotation;
     }
 
     void Update()
@@ -59,7 +63,7 @@ public class Pathfinding_Physics : MonoBehaviour
             float distanceToPlayer = Vector2.Distance(transform.position, target.position);
             
                 
-                if(seeker_Module.isTargetDetected ){
+                if(seeker_Module.isTargetDetected || (seeker_Module.isTargetInRange && doesFollowWithoutSeekerModule)){
                     secAggro = aggroTime;
                 }
                 
@@ -74,15 +78,8 @@ public class Pathfinding_Physics : MonoBehaviour
                     secAggro = 0;
                 }
 
-
-                if(attackRange >= distanceToPlayer){
-                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", true);
-                    aiPath.maxSpeed = maxSpeed * speedMultiplierDuringAttack;
-                }
-                else{
-                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", false);
-                    aiPath.maxSpeed = maxSpeed;
-                }
+                PerformAttack(distanceToPlayer);
+                
 
                 }
                 /**
@@ -119,5 +116,29 @@ public class Pathfinding_Physics : MonoBehaviour
         Vector2 randomDirection = Random.insideUnitCircle * wanderRadius;
         Vector2 wanderTarget = wanderCenter + randomDirection;
         aiDestinationSetter.target.position = wanderTarget;
+    }
+    void PerformAttack(float distance){
+        if(attackRange >= distance && seeker_Module.isTargetDetected){
+                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", true);
+                    aiPath.maxSpeed = maxSpeed * speedMultiplierDuringAttack;
+                    if(doesLookAtTarget){
+                        aiPath.enableRotation = false;
+                        LookAtTarget();
+                    }
+                }
+                else{
+                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", false);
+                    aiPath.maxSpeed = maxSpeed;
+                    aiPath.enableRotation = aiRotate;
+                }
+    }
+
+    void LookAtTarget(){
+        if (target != null)
+        {
+            Vector2 direction = target.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle-90));
+        }
     }
 }
