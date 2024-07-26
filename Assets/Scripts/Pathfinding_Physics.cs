@@ -11,11 +11,14 @@ public class Pathfinding_Physics : MonoBehaviour
     [SerializeField] public float aggroTime;
 
     
-    
+    [Header("AI")]
     public bool isAIactive = true;
     public Transform target; // Player target
     public Transform homePosition; // Home position for the character
+
+    public float maxSpeed;
     public float detectionRadius = 5f; // Radius to detect the player
+    
     public float idleTime = 2f; // Time to spend idling
     public float wanderRadius = 10f; // Radius within which the character can wander
 
@@ -31,6 +34,8 @@ public class Pathfinding_Physics : MonoBehaviour
     [Header("Attack")]
     public float attackRange;
     public Transform attackOrgan;
+
+    public float speedMultiplierDuringAttack;
     
     void Start()
     {
@@ -50,7 +55,7 @@ public class Pathfinding_Physics : MonoBehaviour
         
         
         
-        if(isAIactive && seeker_Module){
+        if(isAIactive && seeker_Module != null){
             float distanceToPlayer = Vector2.Distance(transform.position, target.position);
             
                 
@@ -72,9 +77,11 @@ public class Pathfinding_Physics : MonoBehaviour
 
                 if(attackRange >= distanceToPlayer){
                     attackOrgan.GetComponent<Animator>().SetBool("isAttacking", true);
+                    aiPath.maxSpeed = maxSpeed * speedMultiplierDuringAttack;
                 }
                 else{
                     attackOrgan.GetComponent<Animator>().SetBool("isAttacking", false);
+                    aiPath.maxSpeed = maxSpeed;
                 }
 
                 }
