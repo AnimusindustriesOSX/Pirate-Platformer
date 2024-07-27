@@ -82,7 +82,9 @@ public class CraftingManager : MonoBehaviour
     private void PlaceItemInSlot(CraftingSlot slot)
     {
         slot.gameObject.SetActive(true);
-        slot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
+        slot.transform.GetChild(0).GetComponent<Image>().enabled = true;
+        slot.transform.GetChild(0).GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
+        //slot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
         slot.item = currentItem;
         itemList[slot.index] = currentItem;
 
@@ -99,8 +101,9 @@ public class CraftingManager : MonoBehaviour
 
     private void CheckForCreatedRecipes()
     {
-        resultSlot.gameObject.SetActive(false);
+        //resultSlot.gameObject.SetActive(false);
         resultSlot.item = null;
+        resultSlot.transform.GetChild(0).GetComponent<Image>().enabled = false;
 
         string currentRecipeString = CreateRecipeString();
 
@@ -133,8 +136,9 @@ public class CraftingManager : MonoBehaviour
 
     private void ShowCraftingResult(int recipeIndex)
     {
-        resultSlot.gameObject.SetActive(true);
-        resultSlot.GetComponent<Image>().sprite = recipeResults[recipeIndex].GetComponent<Image>().sprite;
+        //resultSlot.gameObject.SetActive(true);
+        resultSlot.transform.GetChild(0).GetComponent<Image>().enabled = true;
+        resultSlot.transform.GetChild(0).GetComponent<Image>().sprite = recipeResults[recipeIndex].GetComponent<Image>().sprite;
         resultSlot.item = recipeResults[recipeIndex];
 
         Debug.Log(recipeResults[recipeIndex].itemName + " crafted.");
@@ -147,8 +151,8 @@ public class CraftingManager : MonoBehaviour
             if (slot.item != null)
             {
                 slot.item = null;
-                slot.GetComponent<Image>().sprite = null; // Clear the sprite
-                slot.gameObject.SetActive(false);
+                slot.transform.GetChild(0).GetComponent<Image>().enabled = false;
+                //slot.gameObject.SetActive(false);
                 itemList[slot.index] = null;
             }
         }
@@ -161,7 +165,7 @@ public class CraftingManager : MonoBehaviour
             playerInventory.AddItem(slot.item.item); // Return item to inventory
             itemList[slot.index] = null;
             slot.item = null;
-            slot.gameObject.SetActive(false);
+            slot.transform.GetChild(0).GetComponent<Image>().enabled = false;
             CheckForCreatedRecipes();
         }
     }
@@ -193,7 +197,7 @@ public class CraftingManager : MonoBehaviour
             ClearCraftingSlots();
 
             // Hide the result slot after adding to inventory
-            resultSlot.gameObject.SetActive(false);
+            resultSlot.transform.GetChild(0).GetComponent<Image>().enabled = false;
             resultSlot.item = null;
         }
     }
