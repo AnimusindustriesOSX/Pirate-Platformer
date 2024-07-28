@@ -6,10 +6,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public const float MaxHP = 100;
+    
+    
+    [Header("Attribute Caps")]
+    public float MaxHP = 100;
+    public float MaxInsanity = 100;
+    
+    [Header("Attributes")]
     public int strength = 10;
     public float HP;
-    public int insanity;
+    public float insanity;
+    
+    [Header("Item Pickup")]
     public float pickupDistance = 3;
     private Vector2 direction;
     [SerializeField] private float speed;
@@ -18,9 +26,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator LegAnimator;
     private Animator TorsoAnimator;
+    public int selectedItemSlot;
+    
+     [Header("Combat")]
     public Animator swordAnimator;
     public Item selectedItem;
-    public int selectedItemSlot;
+    
 
     
     GameObject mainWeapon;
@@ -42,6 +53,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        AttributeOverflow();
         //physical interaction
         if(Input.GetKeyDown(KeyCode.E)){
             closestItem = FindClosestHarvestableItem();
@@ -285,10 +297,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void InsanityChangeSigned(int insanityChange){
-        insanity += insanityChange;
-        if(insanity > 200){insanity=200;} 
+    public void AttributeOverflow(){
+        
+        if(insanity > MaxInsanity){insanity=MaxInsanity;} 
         if(insanity < 0){insanity=0;} 
+        if(HP > MaxHP){HP=MaxHP;} 
+        if(HP < 0){HP=0;} 
     }
 
     public void useItem(Item item){
