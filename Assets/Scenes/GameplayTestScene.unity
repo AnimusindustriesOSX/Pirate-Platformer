@@ -905,6 +905,12 @@ MonoBehaviour:
   speed: 15
   closestItem: {fileID: 0}
   swordAnimator: {fileID: 0}
+  selectedItem:
+    Name: 
+    ID: 0
+    isShadow: 0
+    Icon: {fileID: 0}
+  selectedItemSlot: 0
 --- !u!4 &642151244
 Transform:
   m_ObjectHideFlags: 0
@@ -936,6 +942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: []
   inventorySize: 20
+  inventoryUI: {fileID: 0}
 --- !u!61 &642151247
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1181,6 +1188,10 @@ PrefabInstance:
     - target: {fileID: 2821469462956258110, guid: ce6c382bec5004a47827eea562b4a9a9, type: 3}
       propertyPath: m_Name
       value: Obelisk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821469462956258110, guid: ce6c382bec5004a47827eea562b4a9a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7638917739098946059, guid: ce6c382bec5004a47827eea562b4a9a9, type: 3}
       propertyPath: m_Enabled
