@@ -1190,6 +1190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obelisk
       objectReference: {fileID: 0}
+    - target: {fileID: 2821469462956258110, guid: ce6c382bec5004a47827eea562b4a9a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7638917739098946059, guid: ce6c382bec5004a47827eea562b4a9a9, type: 3}
       propertyPath: m_Enabled
       value: 0
