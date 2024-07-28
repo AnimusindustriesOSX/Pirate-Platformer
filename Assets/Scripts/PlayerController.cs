@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
      [Header("Combat")]
     public Animator swordAnimator;
     public Item selectedItem;
+    public bool ShadowShieldUp = false;
     
 
     
@@ -215,9 +216,13 @@ public class PlayerController : MonoBehaviour
     
     
     void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Enemy")){
+        if(other.gameObject.CompareTag("Shadow")){
             Debug.Log("COLLIDED WITH PLAYER + = INSANITY");
-            insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage;
+            if(ShadowShieldUp){
+                insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage/2;
+            }else{
+                insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage;
+            }
             HP -= other.GetComponentInParent<Enemy>().collisionDamage;
         }
     }

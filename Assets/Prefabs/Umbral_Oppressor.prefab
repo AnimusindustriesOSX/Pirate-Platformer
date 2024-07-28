@@ -324,6 +324,7 @@ MonoBehaviour:
   idleTime: 2
   wanderRadius: 10
   attackRange: 5
+  isTargetInAttackRange: 0
   doesLookAtTarget: 0
   attackOrgan: {fileID: 8692159555625917167}
   speedMultiplierDuringAttack: 0
@@ -339,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb00a39fe5725f4c812177b6d3fe171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  currentHealth: 1000
+  maxHealth: 100
+  currentHealth: 100
   shadowCollisionDamage: 0
   collisionDamage: 25
 --- !u!95 &8653997890602701930

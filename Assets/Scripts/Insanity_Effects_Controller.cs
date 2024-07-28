@@ -68,7 +68,7 @@ public class Insanity_Effects_Controller : MonoBehaviour
     void VolumeEdit(){
         vignette.intensity.value = vignette_intensity * (player.insanity/player.MaxInsanity);
         colorAdjustments.saturation.value = saturation* (player.insanity/player.MaxInsanity);
-         Debug.Log(colorAdjustments.saturation.value);
+         //Debug.Log(colorAdjustments.saturation.value);
     }
 
      private bool isChanging = false; // To ensure the coroutine is not started multiple times

@@ -14,14 +14,14 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
     enemyAI enemyAI;
-    BoxCollider2D boxCollider2D;
+    Collider2D Collider2D;
     void Start()
     {
         
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         enemyAI = GetComponent<enemyAI>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
+        Collider2D = GetComponent<Collider2D>();
         
     }
 
@@ -36,12 +36,14 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {   
-        animator.SetBool("Dead",true);
-        if(enemyAI!=null){
-            enemyAI.enabled = false;
+        if(animator!=null){
+            animator.SetBool("Dead",true);
         }
-        if(boxCollider2D!=null){
-            boxCollider2D.enabled = false;
+        /* if(enemyAI!=null){
+            enemyAI.enabled = false;
+        } */
+        if(Collider2D!=null){
+            Collider2D.enabled = false;
         }
         StartCoroutine(Wait(0.5f));
     }
