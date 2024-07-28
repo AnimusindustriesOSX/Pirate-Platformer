@@ -905,6 +905,12 @@ MonoBehaviour:
   speed: 15
   closestItem: {fileID: 0}
   swordAnimator: {fileID: 0}
+  selectedItem:
+    Name: 
+    ID: 0
+    isShadow: 0
+    Icon: {fileID: 0}
+  selectedItemSlot: 0
 --- !u!4 &642151244
 Transform:
   m_ObjectHideFlags: 0
@@ -936,6 +942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: []
   inventorySize: 20
+  inventoryUI: {fileID: 0}
 --- !u!61 &642151247
 BoxCollider2D:
   m_ObjectHideFlags: 0
