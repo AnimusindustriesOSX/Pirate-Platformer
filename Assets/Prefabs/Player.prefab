@@ -387,6 +387,7 @@ Transform:
   m_Children:
   - {fileID: 3513865257834164551}
   - {fileID: 91984133716255573}
+  - {fileID: 7292058864347020658}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6904168632448028453
@@ -407,6 +408,7 @@ MonoBehaviour:
   HP: 0
   insanity: 0
   pickupDistance: 3
+  direction: {x: 0, y: 0}
   speed: 15
   closestItem: {fileID: 0}
   selectedItemSlot: 0
@@ -725,8 +727,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bc9e07d542e0a49a083887f013bc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPLayerInsane: 0
+  isPlayerInsane: 0
   Player_Head: {fileID: 5138080752175752698}
+  Insanity_Volume: {fileID: 2584786488523523314}
+  vignette_intensity: 0.5
+  saturation: -40
+  targetIntensity: 1
+  duration: 2
 --- !u!1 &2843068468836804572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1030,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeXZAxis: 0
+--- !u!1 &4588553338326916481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7292058864347020658}
+  - component: {fileID: 2584786488523523314}
+  m_Layer: 0
+  m_Name: Insanity_Post_Process
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7292058864347020658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588553338326916481}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.24074534, y: 1.1099999, z: 1.7262176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 229304992772619413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2584786488523523314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588553338326916481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 76cc4a9c0a861e34ab714501ce787a6c, type: 2}
 --- !u!1 &7691765695074763407
 GameObject:
   m_ObjectHideFlags: 0
