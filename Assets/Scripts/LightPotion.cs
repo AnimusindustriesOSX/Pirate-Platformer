@@ -14,14 +14,10 @@ public class LightPotion : MonoBehaviour
 
     void Start()
     {
-        
         shadowDisc = GameObject.Find("Large_Player_Shadow_Disc");
-
         startTime = Time.time;
-        Debug.Log("LightAOE");
         shadowDisc.GetComponent<ShadowDisc>().SpriteChange(1);
         StartCoroutine(CheckCollisions());
-
     }
 
     void Update()
