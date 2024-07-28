@@ -1736,6 +1736,7 @@ GameObject:
   - component: {fileID: 599129096}
   - component: {fileID: 599129097}
   - component: {fileID: 599129098}
+  - component: {fileID: 599129099}
   m_Layer: 0
   m_Name: Large_Player_Shadow_Disc
   m_TagString: Untagged
@@ -1823,6 +1824,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
+--- !u!114 &599129099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599129095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a372644b8fa724ea1d2504c0bf280c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 54ac94a40b556254690896880e28c504, type: 3}
+  - {fileID: 21300000, guid: a49735539613a214b94a12c0ea2e3f68, type: 3}
+  spriteRenderer: {fileID: 599129097}
 --- !u!1 &640631816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,13 +4030,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroTime: 10
   isAIactive: 1
+  needDirectVision: 1
+  doesFollowWithoutSeekerModule: 0
   target: {fileID: 0}
   homePosition: {fileID: 1467687075}
+  maxSpeed: 0
   detectionRadius: 100
   idleTime: 2
   wanderRadius: 10
   attackRange: 5
+  doesLookAtTarget: 0
   attackOrgan: {fileID: 1467687075}
+  speedMultiplierDuringAttack: 0
 --- !u!114 &1467687077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4039,6 +4061,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isTargetDetected: 0
+  isTargetInRange: 0
   distanceToPlayerX: 0
   distanceToPlayerY: 0
   doesLookAtTarget: 1
@@ -4135,7 +4158,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467687074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -4160,7 +4183,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.8709183, y: -0.15764475}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

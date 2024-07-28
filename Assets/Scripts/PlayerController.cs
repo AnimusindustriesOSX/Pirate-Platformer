@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float HP;
     public int insanity;
     public float pickupDistance = 3;
-    private Vector2 direction;
+    public Vector2 direction;
     [SerializeField] private float speed;
     public GameObject closestItem;
     private Inventory inventory;
@@ -203,27 +203,16 @@ public class PlayerController : MonoBehaviour
     
     
     void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Enemy")){
+        if(other.gameObject.CompareTag("Shadow")){
+            Debug.Log("COLLIDED WITH PLAYER + = INSANITY");
             insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage;
             HP -= other.GetComponentInParent<Enemy>().collisionDamage;
         }
-        
-        
-            
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {   
         rb.velocity = Vector2.zero;
-        //dont use event actions on collision thats what trigger is for. it becomes rippy
-        /**
-        HP -= 10;
-        if(collision.gameObject.CompareTag("Physical-attack")){
-            HP -= collision.gameObject.GetComponent<Enemy>().collisionDamage ;
-        }else if(collision.gameObject.CompareTag("Shadow")){ 
-            InsanityChangeSigned(2);
-        }
-        **/
     }
 
     public static GameObject FindGameObjectInChildWithTag (GameObject parent, string tag)
@@ -238,7 +227,6 @@ public class PlayerController : MonoBehaviour
 			}
 				
 		}
-			
 		return null;
 	}
     GameObject FindClosestItemWithTag(string tag)
@@ -280,14 +268,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-       
         return closestItem;
-
     }
 
     public void InsanityChangeSigned(int insanityChange){
         insanity += insanityChange;
-        if(insanity > 200){insanity=200;} 
+        if(insanity > 100){insanity=100;} 
         if(insanity < 0){insanity=0;} 
     }
 
@@ -297,6 +283,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ITEM USED" + item);
         }
     }
+
+    public void healHP(int HPHealed){
+        HP += HPHealed;
+        if(HP > MaxHP){HP = MaxHP;}
+    }
+
     
     
 }

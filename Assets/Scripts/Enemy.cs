@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        Debug.Log(name + "took dmg =" + damage);
         if (currentHealth <= 0)
         {
             Die();
@@ -37,8 +37,12 @@ public class Enemy : MonoBehaviour
     void Die()
     {   
         animator.SetBool("Dead",true);
-        enemyAI.enabled = false;
-        boxCollider2D.enabled = false;
+        if(enemyAI!=null){
+            enemyAI.enabled = false;
+        }
+        if(boxCollider2D!=null){
+            boxCollider2D.enabled = false;
+        }
         StartCoroutine(Wait(0.5f));
     }
 
