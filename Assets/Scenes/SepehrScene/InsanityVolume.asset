@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.195
+    m_Value: 0.494
   smoothness:
     m_OverrideState: 1
     m_Value: 0.491
@@ -60,7 +60,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
 --- !u!114 &2790353465174944926
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -88,7 +88,7 @@ MonoBehaviour:
     m_Value: 10
   saturation:
     m_OverrideState: 1
-    m_Value: -62
+    m_Value: -42
 --- !u!114 &5748592799971573279
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   lift:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.70013446, z: 0.8908354, w: 0}

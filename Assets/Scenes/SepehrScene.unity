@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1094138331}
-  animatorSpeedMagnitude: 0.05
+  animatorSpeedMagnitude: 0.005
 --- !u!95 &1094138331
 Animator:
   serializedVersion: 5
@@ -3832,6 +3832,10 @@ PrefabInstance:
     - target: {fileID: 688153676446285488, guid: bb143ff4db1c5d84f9410c82c7015e9d, type: 3}
       propertyPath: m_Name
       value: Umbral_Oppressor
+      objectReference: {fileID: 0}
+    - target: {fileID: 688153676446285488, guid: bb143ff4db1c5d84f9410c82c7015e9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 688153676446285488, guid: bb143ff4db1c5d84f9410c82c7015e9d, type: 3}
       propertyPath: m_TagString
