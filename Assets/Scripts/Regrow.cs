@@ -9,7 +9,7 @@ public class Regrow : MonoBehaviour
     [SerializeField] public List<Sprite> sprites;
     [SerializeField] public List<Sprite> shadowSprites;
     
-
+    public int growthTimePerSprite = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class Regrow : MonoBehaviour
         int t=0;
         while(t < sprites.Count-1){
             t++;
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(growthTimePerSprite);
             spriteRenderer.sprite = sprites[t];
         }
         gameObject.GetComponent<ItemPickup>().ChangeEnable(true);

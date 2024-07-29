@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4168500743764442186}
   - component: {fileID: 3967600038735666526}
   - component: {fileID: -715519104061475002}
+  - component: {fileID: 583721537423831004}
   m_Layer: 0
   m_Name: Shadochemy_base_spritesheet (1)_16
   m_TagString: Untagged
@@ -173,6 +174,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &583721537423831004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4237125499837636978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d68812b5319c49b09ad172b175f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7143490176293446288}
 --- !u!1 &5574838061881798713
 GameObject:
   m_ObjectHideFlags: 0
