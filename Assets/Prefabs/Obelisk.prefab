@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fae1df702714c439246f3e8435e94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raveger: {fileID: 1605760328336200024, guid: 1ba902b35835701448f4fd8818d77a76, type: 3}
-  spawnInterval: 2
+  raveger: {fileID: 926482486515598406, guid: 93d97904d733f654fb870a65eda5fb03, type: 3}
+  spawnInterval: 5
 --- !u!114 &8954199539210609899
 MonoBehaviour:
   m_ObjectHideFlags: 0

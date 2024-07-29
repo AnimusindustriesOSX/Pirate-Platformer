@@ -319,7 +319,7 @@ MonoBehaviour:
   doesFollowWithoutSeekerModule: 0
   target: {fileID: 0}
   homePosition: {fileID: 8692159555625917167}
-  maxSpeed: 0
+  maxSpeed: 4
   detectionRadius: 100
   idleTime: 2
   wanderRadius: 10
