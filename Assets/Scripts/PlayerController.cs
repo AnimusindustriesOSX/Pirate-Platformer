@@ -6,21 +6,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public const float MaxHP = 100;
+    
+    
+    [Header("Attribute Caps")]
+    public float MaxHP = 100;
+    public float MaxInsanity = 100;
+    
+    [Header("Attributes")]
     public int strength = 10;
     public float HP;
-    public int insanity;
+    public float insanity;
+    
+    [Header("Item Pickup")]
     public float pickupDistance = 3;
-    private Vector2 direction;
+    public Vector2 direction;
     [SerializeField] private float speed;
     public GameObject closestItem;
     private Inventory inventory;
     private Rigidbody2D rb;
     private Animator LegAnimator;
     private Animator TorsoAnimator;
+    public int selectedItemSlot;
+    
+     [Header("Combat")]
     public Animator swordAnimator;
     public Item selectedItem;
-    public int selectedItemSlot;
+    public bool ShadowShieldUp = false;
+    
 
     
     GameObject mainWeapon;
@@ -42,6 +54,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        AttributeOverflow();
         //physical interaction
         if(Input.GetKeyDown(KeyCode.E)){
             closestItem = FindClosestHarvestableItem();
@@ -203,27 +216,20 @@ public class PlayerController : MonoBehaviour
     
     
     void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Enemy")){
-            insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage;
+        if(other.gameObject.CompareTag("Shadow")){
+            Debug.Log("COLLIDED WITH PLAYER + = INSANITY");
+            if(ShadowShieldUp){
+                insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage/2;
+            }else{
+                insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage;
+            }
             HP -= other.GetComponentInParent<Enemy>().collisionDamage;
         }
-        
-        
-            
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {   
         rb.velocity = Vector2.zero;
-        //dont use event actions on collision thats what trigger is for. it becomes rippy
-        /**
-        HP -= 10;
-        if(collision.gameObject.CompareTag("Physical-attack")){
-            HP -= collision.gameObject.GetComponent<Enemy>().collisionDamage ;
-        }else if(collision.gameObject.CompareTag("Shadow")){ 
-            InsanityChangeSigned(2);
-        }
-        **/
     }
 
     public static GameObject FindGameObjectInChildWithTag (GameObject parent, string tag)
@@ -238,7 +244,6 @@ public class PlayerController : MonoBehaviour
 			}
 				
 		}
-			
 		return null;
 	}
     GameObject FindClosestItemWithTag(string tag)
@@ -280,15 +285,19 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-       
         return closestItem;
-
     }
 
     public void InsanityChangeSigned(int insanityChange){
         insanity += insanityChange;
-        if(insanity > 200){insanity=200;} 
+        if(insanity > 100){insanity=100;} 
+    }  
+    public void AttributeOverflow(){
+        
+        if(insanity > MaxInsanity){insanity=MaxInsanity;} 
         if(insanity < 0){insanity=0;} 
+        if(HP > MaxHP){HP=MaxHP;} 
+        if(HP < 0){HP=0;} 
     }
 
     public void useItem(Item item){
@@ -297,6 +306,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ITEM USED" + item);
         }
     }
+
+    public void healHP(int HPHealed){
+        HP += HPHealed;
+        if(HP > MaxHP){HP = MaxHP;}
+    }
+
     
     
 }
