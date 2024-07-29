@@ -8,7 +8,7 @@ public class UserInterfaceController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] float health = 100;
-    [SerializeField] int insanity;
+    [SerializeField] float insanity;
 
     [SerializeField] int maxHealth = 100;
     [SerializeField] int maxInsanity = 100;
