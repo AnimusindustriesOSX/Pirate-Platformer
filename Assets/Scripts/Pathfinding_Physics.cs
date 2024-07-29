@@ -35,7 +35,6 @@ public class Pathfinding_Physics : MonoBehaviour
     
     [Header("Attack")]
     public float attackRange;
-    public bool isTargetInAttackRange = false;
     public bool doesLookAtTarget;
     public Transform attackOrgan;
     private bool aiRotate = false;
@@ -120,9 +119,7 @@ public class Pathfinding_Physics : MonoBehaviour
     }
     void PerformAttack(float distance){
         if(attackRange >= distance && seeker_Module.isTargetDetected){
-                    isTargetInAttackRange = true;
-                    if(attackOrgan != null)attackOrgan.GetComponent<Animator>().SetBool("isAttacking", true);
-                    
+                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", true);
                     aiPath.maxSpeed = maxSpeed * speedMultiplierDuringAttack;
                     if(doesLookAtTarget){
                         aiPath.enableRotation = false;
@@ -130,8 +127,7 @@ public class Pathfinding_Physics : MonoBehaviour
                     }
                 }
                 else{
-                    if(attackOrgan != null)attackOrgan.GetComponent<Animator>().SetBool("isAttacking", false);
-                    isTargetInAttackRange = false;
+                    attackOrgan.GetComponent<Animator>().SetBool("isAttacking", false);
                     aiPath.maxSpeed = maxSpeed;
                     aiPath.enableRotation = aiRotate;
                 }

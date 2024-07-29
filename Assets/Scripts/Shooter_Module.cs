@@ -11,17 +11,17 @@ public class Shooter_Module : MonoBehaviour
     
 
     private Coroutine shootingCoroutine;
-    private Pathfinding_Physics pathfindingScript;
+    private Seeker_Module seeker_Module;
 
     
     void Start(){
-        pathfindingScript = transform.GetComponent<Pathfinding_Physics>();
+        seeker_Module = transform.GetComponent<Seeker_Module>();
     }
     
     
     void Update()
     {
-        if (pathfindingScript.isTargetInAttackRange)
+        if (seeker_Module.isTargetDetected)
         {
             if (shootingCoroutine == null)
             {

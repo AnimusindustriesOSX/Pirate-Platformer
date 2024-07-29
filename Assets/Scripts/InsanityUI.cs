@@ -22,7 +22,7 @@ public class InsanityUI : MonoBehaviour
     }
     public void Update(){
         if (insanityUI != null){
-            Insanity = playerController.insanity / playerController.MaxInsanity;
+            Insanity = playerController.insanity / 100f;
             insanityUI.fillAmount = Insanity;
         }
     }

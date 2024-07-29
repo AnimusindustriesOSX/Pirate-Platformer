@@ -14,21 +14,21 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
     enemyAI enemyAI;
-    Collider2D Collider2D;
+    BoxCollider2D boxCollider2D;
     void Start()
     {
         
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         enemyAI = GetComponent<enemyAI>();
-        Collider2D = GetComponent<Collider2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
         
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log(name + "took dmg =" + damage);
+
         if (currentHealth <= 0)
         {
             Die();
@@ -36,15 +36,9 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {   
-        if(animator!=null){
-            animator.SetBool("Dead",true);
-        }
-        /* if(enemyAI!=null){
-            enemyAI.enabled = false;
-        } */
-        if(Collider2D!=null){
-            Collider2D.enabled = false;
-        }
+        animator.SetBool("Dead",true);
+        enemyAI.enabled = false;
+        boxCollider2D.enabled = false;
         StartCoroutine(Wait(0.5f));
     }
 
