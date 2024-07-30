@@ -54,10 +54,12 @@ public class Enemy : MonoBehaviour
         {
             if (gameObject.CompareTag("Physical")){
                 TakeDamage(other.gameObject.GetComponent<Sword>().damage);
-            }    
-        }else if(other.gameObject.CompareTag("Player-shadow-attack")){
+            }   
+        } 
+        if(other.gameObject.CompareTag("Player-shadow-attack")){
             if (gameObject.CompareTag("Shadow")){
-                //currentHealth -= other.gameObject.GetComponent<ShadowAttack>().damage;
+                TakeDamage(other.gameObject.GetComponent<Bullet>().damage);
+                other.gameObject.GetComponent<Bullet>().Impact();
             }
         }
     }

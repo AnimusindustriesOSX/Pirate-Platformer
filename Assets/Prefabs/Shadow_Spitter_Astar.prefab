@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 4351195693472182657}
   - component: {fileID: 1860342989059902455}
   - component: {fileID: -570010821074637534}
+  - component: {fileID: 6867361067748069747}
   m_Layer: 0
   m_Name: Shadow_Spitter_Astar
   m_TagString: Shadow
@@ -290,6 +291,7 @@ MonoBehaviour:
   detectionRadius: 100
   idleTime: 2
   wanderRadius: 10
+  disableAttack: 0
   attackRange: 15
   isTargetInAttackRange: 0
   doesLookAtTarget: 1
@@ -326,6 +328,41 @@ MonoBehaviour:
   currentHealth: 0
   shadowCollisionDamage: 0
   collisionDamage: 0
+--- !u!70 &6867361067748069747
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496168450321678868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013195515, y: 0.083259225}
+  m_Size: {x: 1.5321989, y: 2.3945997}
+  m_Direction: 0
 --- !u!1 &2840705485747014019
 GameObject:
   m_ObjectHideFlags: 0

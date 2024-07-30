@@ -1184,10 +1184,10 @@ TextureImporter:
       name: Shadochemy_base_spritesheet (1)_62
       rect:
         serializedVersion: 2
-        x: 987
-        y: 421
-        width: 388
-        height: 373
+        x: 964
+        y: 398
+        width: 440
+        height: 396
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1271,7 +1271,7 @@ TextureImporter:
         x: 963
         y: 10
         width: 442
-        height: 409
+        height: 388
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -10,6 +10,15 @@ public class Shadow_Cursor : MonoBehaviour
     [SerializeField] Transform shadow_Gun;
     private GameObject player;
     public Vector3 offset;
+
+    [Header("Shoot")]
+    public GameObject bulletPrefab;
+    public float spawnOffset = 0.5f;
+    public float fireRate = 0.5f;
+    public float nextFireTime = 0.5f;
+
+    private float angle;
+    
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -35,6 +44,7 @@ public class Shadow_Cursor : MonoBehaviour
         Cursor.position = ray.GetPoint(distance);
         }
     GunLookAtCursor();
+    GunShoot();
 }
 
 void GunLookAtCursor(){
@@ -42,9 +52,21 @@ void GunLookAtCursor(){
     Vector2 direction = Cursor.position - shadow_Gun.position;
             
     // Calculate the angle between the object's current direction and the target
-    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
     // Apply the rotation
     shadow_Gun.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+}
+void GunShoot(){
+    if (Input.GetMouseButton(1) && Time.time >= nextFireTime)
+        {
+            // Fire the bullet
+             Vector3 spawnPosition = shadow_Gun.position + shadow_Gun.right * spawnOffset;
+            
+        // Instantiate the bullet at the spawn position and rotation
+            GameObject bullet = Instantiate(bulletPrefab, spawnPosition, shadow_Gun.rotation* Quaternion.Euler(0, 0, 270));
+            nextFireTime = Time.time + fireRate;
+        }
+        
 }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3604882541435071189}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Shadow
+  m_TagString: Shadow-attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

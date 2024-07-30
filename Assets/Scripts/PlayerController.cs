@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -217,7 +217,7 @@ public class PlayerController : MonoBehaviour
     
     
     void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Shadow")){
+        if(other.gameObject.CompareTag("Shadow-attack")||other.gameObject.CompareTag("Physical-attack")){
             Debug.Log("COLLIDED WITH PLAYER + = INSANITY");
             if(ShadowShieldUp){
                 insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage/2;

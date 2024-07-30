@@ -140,7 +140,7 @@ MonoBehaviour:
   aggroRangeY: 20
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   isTargetDetected: 0
   isTargetInRange: 0
   distanceToPlayerX: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   detectionRadius: 100
   idleTime: 2
   wanderRadius: 10
+  disableAttack: 0
   attackRange: 3
   isTargetInAttackRange: 0
   doesLookAtTarget: 0
@@ -182,7 +183,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926482486515598406}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
-  shadowCollisionDamage: 2
+  shadowCollisionDamage: 5
   collisionDamage: 0
 --- !u!1 &5481763532197245794
 GameObject:
@@ -360,7 +361,7 @@ GameObject:
   - component: {fileID: 274035190769750205}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Enemy
+  m_TagString: Shadow-attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,7 +414,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01758194, y: 0.011282563}
+  m_Offset: {x: -0.01758194, y: 0.3741641}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -424,7 +425,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5894604, y: 2.6268857}
+  m_Size: {x: 2.5894604, y: 3.3526487}
   m_EdgeRadius: 0
 --- !u!114 &5349131223252741637
 MonoBehaviour:

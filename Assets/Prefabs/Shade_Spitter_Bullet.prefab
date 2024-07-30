@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6766202897969439390}
   m_Layer: 0
   m_Name: Shade_Spitter_Bullet
-  m_TagString: Shadow
+  m_TagString: Shadow-attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e831caa32029a954f843e378b0497acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayerBullet: 0
   speed: 20
+  damage: 10
+  lifetime: 5
 --- !u!70 &8011801913736305757
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
