@@ -12,6 +12,8 @@ TagManager:
   - Player-shadow-attack
   - Physical-attack
   - ConsumablesCanvas
+  - Enemy
+  - Time
   layers:
   - Default
   - TransparentFX

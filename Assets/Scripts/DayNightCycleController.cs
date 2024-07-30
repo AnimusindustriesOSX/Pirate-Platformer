@@ -7,6 +7,9 @@ public class DayNightCycleController : MonoBehaviour
 {
     // Start is called before the first frame update
     
+    
+    public bool isNight = false;
+    
     public Animator animator;
     public float animatorSpeedMagnitude;
     private float baseAnimSpeed;
@@ -19,4 +22,5 @@ public class DayNightCycleController : MonoBehaviour
     {
         animator.speed = baseAnimSpeed * animatorSpeedMagnitude;
     }
+    
 }
