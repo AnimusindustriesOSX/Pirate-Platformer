@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4364380771018203035}
   - component: {fileID: 6781080313811523524}
   - component: {fileID: 2246387163116606057}
+  - component: {fileID: -1993137528791630276}
   m_Layer: 0
   m_Name: Ancient Seal plant
   m_TagString: Item
@@ -346,3 +347,17 @@ MonoBehaviour:
   - {fileID: 67270209, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
   - {fileID: 157770611, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
   - {fileID: 2039805940, guid: 9cd2c893bb00cb847b10bac32c41fb74, type: 3}
+  growthTimePerSprite: 10
+--- !u!114 &-1993137528791630276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574001144090927992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9945cd03b35cd0a429dc76b8bb69aba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  umbralOppressor: {fileID: 688153676446285488, guid: bb143ff4db1c5d84f9410c82c7015e9d, type: 3}

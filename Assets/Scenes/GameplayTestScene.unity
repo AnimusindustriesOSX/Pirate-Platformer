@@ -619,54 +619,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f6abedee6d8f44fbf4f69c496b1c01, type: 3}
---- !u!1 &820961307
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 820961309}
-  - component: {fileID: 820961308}
-  m_Layer: 0
-  m_Name: SpawnManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &820961308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820961307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efecd6aedc35224c9144c76c1775b03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 926482486515598406, guid: 93d97904d733f654fb870a65eda5fb03, type: 3}
-  - {fileID: 2496168450321678868, guid: aeeb8aa070d2a9948972d2e9ef0d2206, type: 3}
-  - {fileID: 688153676446285488, guid: bb143ff4db1c5d84f9410c82c7015e9d, type: 3}
---- !u!4 &820961309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820961307}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12728429, y: 3.3418522, z: 1.3511248}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &836110993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -784,7 +736,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1347314047
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: -10000
   m_Sprite: {fileID: 21300000, guid: f105b5a5b2f2aed4f92307b02d04e941, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2112,7 +2064,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 836110993}
-  - {fileID: 820961309}
   - {fileID: 2061468566}
   - {fileID: 894787633}
   - {fileID: 7161697036520929961}

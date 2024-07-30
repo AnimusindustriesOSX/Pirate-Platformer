@@ -19,9 +19,15 @@ public class Regrow : MonoBehaviour
     }
 
     public void Harvest(){
-        
+        //if its a seal plant call spawnUmbralOppressorOnHarvest()
+        if(gameObject.GetComponent<ItemPickup>().item.ID == 4){
+            if(gameObject.GetComponent<SealPlant>() != null){
+                gameObject.GetComponent<SealPlant>().spawnUmbralOppressorOnHarvest();
+            }
+        }
         gameObject.GetComponent<ItemPickup>().ChangeEnable(false);
         StartCoroutine(HandleHarvest());
+        
     }
 
     IEnumerator HandleHarvest(){
