@@ -51,6 +51,9 @@ TagManager:
   - name: Floor
     uniqueID: 2947653249
     locked: 0
+  - name: Gradiant
+    uniqueID: 2919814539
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

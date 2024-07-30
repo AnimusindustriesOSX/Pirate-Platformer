@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 8039465177134061876}
   m_Layer: 0
   m_Name: Umbral_Oppressor
-  m_TagString: Untagged
+  m_TagString: Physical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,11 +256,11 @@ MonoBehaviour:
   maxAcceleration: 10
   rotationSpeed: 180
   slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  pickNextWaypointDist: 6
+  endReachedDistance: 5
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 1
+  whenCloseToDestination: 0
   constrainInsideGraph: 0
 --- !u!114 &3840084476760076850
 MonoBehaviour:
@@ -323,6 +323,7 @@ MonoBehaviour:
   detectionRadius: 100
   idleTime: 2
   wanderRadius: 10
+  disableAttack: 0
   attackRange: 5
   isTargetInAttackRange: 0
   doesLookAtTarget: 0
@@ -397,7 +398,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.8709183, y: -0.15764475}
+  m_Offset: {x: -1.6061347, y: -0.5181737}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -408,7 +409,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9970284, y: 4.501825}
+  m_Size: {x: 5.7662997, y: 7.161351}
   m_EdgeRadius: 0
 --- !u!1 &797693142182240213
 GameObject:
@@ -496,7 +497,7 @@ MonoBehaviour:
   m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 819eb1af00000000
+  m_ApplyToSortingLayers: 819eb1af
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

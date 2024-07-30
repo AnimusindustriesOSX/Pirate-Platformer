@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [Header("Item Pickup")]
     public float pickupDistance = 3;
     public Vector2 direction;
-    [SerializeField] private float speed;
+    public float speed;
     public GameObject closestItem;
     private Inventory inventory;
     private Rigidbody2D rb;
