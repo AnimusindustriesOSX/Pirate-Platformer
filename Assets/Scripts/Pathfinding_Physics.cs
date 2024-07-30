@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using System.Timers;
+using Unity.Mathematics;
 
 public class Pathfinding_Physics : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Pathfinding_Physics : MonoBehaviour
     private float secAggro;
     
     [Header("Attack")]
+    
+    public bool disableAttack = false;
     public float attackRange;
     public bool isTargetInAttackRange = false;
     public bool doesLookAtTarget;
@@ -51,6 +54,9 @@ public class Pathfinding_Physics : MonoBehaviour
         isIdle = true;
         wanderCenter = homePosition.position;
         aiRotate = aiPath.enableRotation;
+        
+        //game jam specific
+        aggroTime = math.INFINITY;
     }
 
     void Update()
@@ -114,12 +120,12 @@ public class Pathfinding_Physics : MonoBehaviour
 
     void Wander()
     {
-        Vector2 randomDirection = Random.insideUnitCircle * wanderRadius;
+        Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * wanderRadius;
         Vector2 wanderTarget = wanderCenter + randomDirection;
         aiDestinationSetter.target.position = wanderTarget;
     }
     void PerformAttack(float distance){
-        if(attackRange >= distance && seeker_Module.isTargetDetected){
+        if(attackRange >= distance && seeker_Module.isTargetDetected && disableAttack == false){
                     isTargetInAttackRange = true;
                     if(attackOrgan != null)attackOrgan.GetComponent<Animator>().SetBool("isAttacking", true);
                     
