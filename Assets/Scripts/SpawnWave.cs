@@ -5,14 +5,23 @@ using UnityEngine;
 public class SpawnWave : MonoBehaviour
 {
     GameObject floor;
-    readonly Transform [] spawnPoints;
+    public Transform [] spawnPoints;
     public GameObject[] enemyPrefabs;
+    public DayNightCycleController dayNightCycleController;
     // Start is called before the first frame update
     void Start()
     {
         floor = GameObject.Find("Floor");
         for(int i = 0; i < 8; i++){
             spawnPoints[i] = floor.transform.GetChild(i);
+        }
+        dayNightCycleController = GameObject.FindGameObjectWithTag("Time").GetComponent<DayNightCycleController>();
+    }
+
+    private void Update() {
+        if(dayNightCycleController.isNight){
+            SpawnEnemies(5);
+            dayNightCycleController.isNight = false;
         }
     }
 
