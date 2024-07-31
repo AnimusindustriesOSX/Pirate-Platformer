@@ -480,9 +480,9 @@ Transform:
   m_GameObject: {fileID: 209467131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.4564417, w: 0.88975334}
-  m_LocalPosition: {x: 33.3, y: -36.9, z: 0}
-  m_LocalScale: {x: 2.5091486, y: 1.3841, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 75.9, y: -53.7, z: 0}
+  m_LocalScale: {x: 7.89, y: 4.3522925, z: 3.1444929}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 627732117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -54.315}

@@ -85,6 +85,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: a997007702371cc4599543b2376b4907, type: 3}
     - time: 0.81666666
       value: {fileID: 21300000, guid: 7e6a35ea38444fe4683fbdbe1c77d335, type: 3}
+    - time: 1.65
+      value: {fileID: 21300000, guid: 7e6a35ea38444fe4683fbdbe1c77d335, type: 3}
     attribute: m_Sprite
     path: Sprite/Physical/MainBody/Tongue
     classID: 212
@@ -129,12 +131,13 @@ AnimationClip:
     - {fileID: 21300000, guid: a0213d0cdd3dca941bfe328a1f71526f, type: 3}
     - {fileID: 21300000, guid: a997007702371cc4599543b2376b4907, type: 3}
     - {fileID: 21300000, guid: 7e6a35ea38444fe4683fbdbe1c77d335, type: 3}
+    - {fileID: 21300000, guid: 7e6a35ea38444fe4683fbdbe1c77d335, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8333333
+    m_StopTime: 1.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -344,7 +344,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   shadowCollisionDamage: 0
-  collisionDamage: 25
+  collisionDamage: 2
 --- !u!95 &8653997890602701930
 Animator:
   serializedVersion: 5

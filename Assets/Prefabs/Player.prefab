@@ -274,7 +274,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019959569, y: 0}
+  m_Offset: {x: -0.1040082, y: 0.4342006}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5241457, y: 0.12810859}
@@ -285,7 +285,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7399194, y: 1.1}
+  m_Size: {x: 2.8774285, y: 2.5089076}
   m_EdgeRadius: 0
 --- !u!114 &7961269941443999337
 MonoBehaviour:
@@ -461,6 +461,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: afd9c2bb0ce518b44ab6470309f8c0b0, type: 3}
   - {fileID: 8300000, guid: b7f7834369624e849a32dd168e65da43, type: 3}
   - {fileID: 8300000, guid: 4c25d0e29038f2f439d337971957bcb7, type: 3}
+  isProximityAudio: 0
+  playOnAwake: 0
+  maxDistance: 10
+  minVolume: 0
+  maxVolume: 1
 --- !u!1 &2791908684738582757
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +705,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: eaf7ab32e544e744b8f498e7664303b9, type: 3}
+  isProximityAudio: 0
+  playOnAwake: 0
+  maxDistance: 10
+  minVolume: 0
+  maxVolume: 1
 --- !u!82 &3701854416293194278
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1552,6 +1562,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d1686ca7371a37b43bdc5edadde1a475, type: 3}
   - {fileID: 8300000, guid: d70747a0ce11f924b99ea956306b6e3a, type: 3}
   - {fileID: 8300000, guid: fefa1091f4267b14e9dc9bfb90724ec6, type: 3}
+  isProximityAudio: 0
+  playOnAwake: 0
+  maxDistance: 10
+  minVolume: 0
+  maxVolume: 1
 --- !u!1 &8281090870768208870
 GameObject:
   m_ObjectHideFlags: 0
