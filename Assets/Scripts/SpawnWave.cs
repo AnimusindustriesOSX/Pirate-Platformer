@@ -5,14 +5,25 @@ using UnityEngine;
 
 public class SpawnWave : MonoBehaviour
 {
+    public NightParser nightParser;
     GameObject floor;
     public Transform [] spawnPoints;
     public GameObject[] enemyPrefabs;
-    public DayNightCycleController dayNightCycleController;
+    
     public int enemiesPerArea = 5;
     public int additionalEnemiesPerAreaWhenInsane = 1;
     GameObject wave;
     // Start is called before the first frame update
+
+    private void OnEnable()
+    {
+        nightParser.OnValueTrue += HandleValueTrue;
+    }
+
+    private void OnDisable()
+    {
+        nightParser.OnValueTrue -= HandleValueTrue;
+    }
     void Start()
     {
         
@@ -20,18 +31,16 @@ public class SpawnWave : MonoBehaviour
         for(int i = 0; i < 8; i++){
             spawnPoints[i] = floor.transform.GetChild(i);
         }
-        dayNightCycleController = GameObject.FindGameObjectWithTag("Time").GetComponent<DayNightCycleController>();
+        
     }
 
-    private void Update() {
-        if(dayNightCycleController.isNight){
-            if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().insanity == 100){
-                SpawnEnemiesInsane(enemiesPerArea + additionalEnemiesPerAreaWhenInsane);
-            }else{
-                SpawnEnemies(enemiesPerArea);
-            }
-            dayNightCycleController.isNight = false;
+    private void HandleValueTrue() {
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().insanity == 100){
+            SpawnEnemiesInsane(enemiesPerArea + additionalEnemiesPerAreaWhenInsane);
+        }else{
+            SpawnEnemies(enemiesPerArea);
         }
+        
     }
 
     private void SpawnEnemies(int enemiesPerArea)

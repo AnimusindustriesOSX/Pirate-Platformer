@@ -7,7 +7,7 @@ public class DayNightCycleController : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    
+    public NightParser nightParser;
     public bool isNight = false;
     
     public Animator animator;
@@ -21,6 +21,7 @@ public class DayNightCycleController : MonoBehaviour
     void Update()
     {
         animator.speed = baseAnimSpeed * animatorSpeedMagnitude;
+        nightParser.Value = isNight;
     }
     
 }
