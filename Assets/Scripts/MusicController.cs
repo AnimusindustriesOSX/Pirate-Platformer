@@ -80,7 +80,7 @@ public void RequestTransition(AudioSource newAudioSource)
         // Check if the new audio source is already playing
         if (currentAudioSource.clip == newAudioSource.clip && currentAudioSource.isPlaying)
         {
-            Debug.Log("Requested audio source is already playing. No transition needed.");
+            //Debug.Log("Requested audio source is already playing. No transition needed.");
             QueueCoolDown = false;
         }
         else{
@@ -118,7 +118,7 @@ public void RequestTransition(AudioSource newAudioSource)
     IEnumerator FadeOutAndIn(AudioSource fadeOutSource, AudioSource fadeInSource, float duration)
     {
         float elapsedTime = 0f;
-        Debug.Log("wtf");
+        
 
         // Ensure the second audio source is stopped and starts playing from the correct position
         //fadeInSource.Stop();

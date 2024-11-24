@@ -6215,6 +6215,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4773962361690723343, guid: 69362ab26236b0f4187629b23af2daf3, type: 3}
+      propertyPath: canvasToSwap
+      value: 
+      objectReference: {fileID: 255549256}
+    - target: {fileID: 4773962361690723343, guid: 69362ab26236b0f4187629b23af2daf3, type: 3}
+      propertyPath: canvasToActivate
+      value: 
+      objectReference: {fileID: 1452259234}
     - target: {fileID: 6421335368852285935, guid: 69362ab26236b0f4187629b23af2daf3, type: 3}
       propertyPath: m_Name
       value: TestCauldron (1)

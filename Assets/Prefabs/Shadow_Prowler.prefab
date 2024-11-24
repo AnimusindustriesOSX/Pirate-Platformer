@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 6836758405868923939}
   - component: {fileID: 4054155049622941079}
   - component: {fileID: 8884035073937592106}
+  - component: {fileID: 1058734511880111033}
   m_Layer: 0
   m_Name: Shadow_Prowler
   m_TagString: Shadow
@@ -532,3 +533,38 @@ MonoBehaviour:
   currentFleeLocation: {fileID: 0}
   angle: 0
   angleTowardsPlayer: 0
+--- !u!70 &1058734511880111033
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906359873006772423}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00009918213, y: -0.56659603}
+  m_Size: {x: 1.5366821, y: 5.383417}
+  m_Direction: 0

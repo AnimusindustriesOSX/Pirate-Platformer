@@ -1098,6 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbe00dfe00a6d541b5459326c11cefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nightParser: {fileID: 0}
   isNight: 0
   animator: {fileID: 278001864}
   animatorSpeedMagnitude: 0.01
@@ -1605,7 +1606,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1585410900590067726, guid: aeeb8aa070d2a9948972d2e9ef0d2206, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.979071
+      value: -51.5
       objectReference: {fileID: 0}
     - target: {fileID: 1585410900590067726, guid: aeeb8aa070d2a9948972d2e9ef0d2206, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1653,7 +1654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496168450321678868, guid: aeeb8aa070d2a9948972d2e9ef0d2206, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2732091686800758314, guid: aeeb8aa070d2a9948972d2e9ef0d2206, type: 3}
       propertyPath: radius
@@ -2796,7 +2797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 926482486515598406, guid: 93d97904d733f654fb870a65eda5fb03, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 926482486515598406, guid: 93d97904d733f654fb870a65eda5fb03, type: 3}
       propertyPath: m_TagString
@@ -2808,7 +2809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2517891608409190981, guid: 93d97904d733f654fb870a65eda5fb03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5808377
+      value: 33.28
       objectReference: {fileID: 0}
     - target: {fileID: 2517891608409190981, guid: 93d97904d733f654fb870a65eda5fb03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3226,6 +3227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbe00dfe00a6d541b5459326c11cefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nightParser: {fileID: 11400000, guid: 587e8f75b2e3e4d4ca37df37b5864843, type: 2}
   isNight: 0
   animator: {fileID: 1094138331}
   animatorSpeedMagnitude: 0.005
@@ -6825,11 +6827,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5118311535154952091, guid: fbfb2f8ca093da04185a0081672e0076, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.52
+      value: -5.87
       objectReference: {fileID: 0}
     - target: {fileID: 5118311535154952091, guid: fbfb2f8ca093da04185a0081672e0076, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.82
+      value: -0.76
       objectReference: {fileID: 0}
     - target: {fileID: 5118311535154952091, guid: fbfb2f8ca093da04185a0081672e0076, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6869,7 +6871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8632758066595954862, guid: fbfb2f8ca093da04185a0081672e0076, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6890,15 +6892,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7906359873006772423, guid: b611836ea2b466b4980db03f6f973ca7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9069398324482865003, guid: b611836ea2b466b4980db03f6f973ca7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.6
+      value: 47.8
       objectReference: {fileID: 0}
     - target: {fileID: 9069398324482865003, guid: b611836ea2b466b4980db03f6f973ca7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.64
+      value: -33.9
       objectReference: {fileID: 0}
     - target: {fileID: 9069398324482865003, guid: b611836ea2b466b4980db03f6f973ca7, type: 3}
       propertyPath: m_LocalPosition.z

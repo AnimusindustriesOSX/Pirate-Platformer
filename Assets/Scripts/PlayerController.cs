@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Shadow-attack")||other.gameObject.CompareTag("Physical-attack")){
-            Debug.Log("COLLIDED WITH PLAYER + = INSANITY");
+            
             if(ShadowShieldUp){
                 insanity += other.GetComponentInParent<Enemy>().shadowCollisionDamage/2;
             }else{

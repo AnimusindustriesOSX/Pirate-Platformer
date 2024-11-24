@@ -50,19 +50,29 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         
+        Debug.Log("my dog tag:"+gameObject.tag);
         if (other.gameObject.CompareTag("MainWeapon"))
         {
+            
+            
+            Debug.Log("pain");
             if (gameObject.CompareTag("Physical")){
                 TakeDamage(other.gameObject.GetComponent<Sword>().damage);
             }   
+            
         } 
         if(other.gameObject.CompareTag("Player-shadow-attack")){
             if (gameObject.CompareTag("Shadow")){
+                 
                 TakeDamage(other.gameObject.GetComponent<Bullet>().damage);
                 other.gameObject.GetComponent<Bullet>().Impact();
             }
+           
+            
         }
+        
     }
+    
 
     private IEnumerator Wait(float seconds)
     {

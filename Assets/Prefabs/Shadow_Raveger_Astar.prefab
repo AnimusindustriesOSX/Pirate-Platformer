@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2645392910051806610}
   - component: {fileID: 287022995021171682}
   - component: {fileID: 4228251535324371844}
-  - component: {fileID: 6811847221977833181}
   - component: {fileID: -4556569850975062184}
-  m_Layer: 7
+  - component: {fileID: 7307923910625320106}
+  m_Layer: 0
   m_Name: Shadow_Raveger_Astar
   m_TagString: Shadow
   m_Icon: {fileID: 0}
@@ -176,8 +176,24 @@ MonoBehaviour:
   doesLookAtTarget: 0
   attackOrgan: {fileID: 8568848783436995623}
   speedMultiplierDuringAttack: 0
---- !u!70 &6811847221977833181
-CapsuleCollider2D:
+--- !u!114 &-4556569850975062184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926482486515598406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb00a39fe5725f4c812177b6d3fe171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 25
+  currentHealth: 0
+  shadowCollisionDamage: 5
+  collisionDamage: 0
+--- !u!61 &7307923910625320106
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -208,25 +224,19 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029663563, y: 0.08718133}
-  m_Size: {x: 1.3316507, y: 2.4344683}
-  m_Direction: 0
---- !u!114 &-4556569850975062184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926482486515598406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb00a39fe5725f4c812177b6d3fe171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 0
-  shadowCollisionDamage: 5
-  collisionDamage: 0
+  m_Offset: {x: 0.0367198, y: 0.07958281}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7099295, y: 2.2494648}
+  m_EdgeRadius: 0
 --- !u!1 &5481763532197245794
 GameObject:
   m_ObjectHideFlags: 0
